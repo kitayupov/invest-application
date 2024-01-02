@@ -14,11 +14,14 @@ import androidx.annotation.StyleableRes
 import androidx.core.view.isVisible
 import ru.devkit.ui.databinding.LayoutListItemBinding
 
+/**
+ * @author k.i.tayupov
+ */
 class ListItemComponent @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,
     defaultStyleAttr: Int = 0,
-    defaultStyleRes: Int = 0
+    defaultStyleRes: Int = 0,
 ) : FrameLayout(context, attrs, defaultStyleAttr, defaultStyleRes) {
 
     private val binding = LayoutListItemBinding.inflate(LayoutInflater.from(context), this, true)
@@ -103,6 +106,6 @@ class ListItemComponent @JvmOverloads constructor(
         val diffValue: String,
         val diffPercentage: String,
         val diffColor: Int? = null,
-        val sign: Int? = null
+        val sign: Int? = null,
     )
 }

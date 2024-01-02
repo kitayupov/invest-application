@@ -3,6 +3,9 @@ package ru.devkit.utils
 import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 
+/**
+ * @author k.i.tayupov
+ */
 fun formatCurrencyPrice(value: Number): String {
     return "$ " + formatPrice(value)
 }

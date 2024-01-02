@@ -10,7 +10,10 @@ import ru.devkit.ui.ListItemComponent
 import ru.devkit.ui.model.*
 import ru.devkit.ui.model.ListItemUiModel
 
-class PortfolioAdapter : ListAdapter<ListItemUiModel, PortfolioAdapter.InvestmentViewHolder>(PortfolioDiffCallback()) {
+/**
+ * @author k.i.tayupov
+ */
+internal class PortfolioAdapter : ListAdapter<ListItemUiModel, PortfolioAdapter.InvestmentViewHolder>(PortfolioDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InvestmentViewHolder {
         val binding = ListItemPortfolioBinding.inflate(LayoutInflater.from(parent.context), parent, false)

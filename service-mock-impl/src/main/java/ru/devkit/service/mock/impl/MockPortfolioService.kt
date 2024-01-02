@@ -9,13 +9,14 @@ import ru.devkit.service.api.data.PortfolioApi
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 
+/**
+ * @author k.i.tayupov
+ */
 class MockPortfolioService @Inject constructor(
-    private val commonService: MockCommonService
+    private val commonService: MockCommonService,
 ) : PortfolioServiceApi {
 
     private var data = AtomicReference(PortfolioApi(emptyList()))
-
-    private var isRunning = true
 
     init {
         data.set(
@@ -31,14 +32,8 @@ class MockPortfolioService @Inject constructor(
         )
     }
 
-    override fun release() {
-        isRunning = false
-    }
-
     override fun getPortfolio(): Flow<PortfolioApi> = flow {
-        while (isRunning) {
-            emit(data.get())
-            delay(1_000)
-        }
+        emit(data.get())
+        delay(1_000)
     }
 }

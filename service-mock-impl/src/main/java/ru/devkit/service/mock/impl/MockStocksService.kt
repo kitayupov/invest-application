@@ -8,28 +8,27 @@ import javax.inject.Inject
 import kotlin.concurrent.thread
 import kotlin.random.Random
 
+/**
+ * @author k.i.tayupov
+ */
 class MockStocksService @Inject constructor(
-    private val commonService: MockCommonService
-): StocksServiceApi {
+    private val commonService: MockCommonService,
+) : StocksServiceApi {
 
     private val cache = AtomicReference(mutableMapOf<String, List<Double>>())
 
-    private var isRunning = true
-
     init {
         thread {
-            while (isRunning) {
-                val update = cache.get().mapValues { (_, value) ->
-                    if (Random.nextInt(5) == 0) {
-                        val last = value.last()
-                        value + (last + offset(last))
-                    } else {
-                        value
-                    }
+            val update = cache.get().mapValues { (_, value) ->
+                if (Random.nextInt(5) == 0) {
+                    val last = value.last()
+                    value + (last + offset(last))
+                } else {
+                    value
                 }
-                cache.set(update.toMutableMap())
-                Thread.sleep(1_000)
             }
+            cache.set(update.toMutableMap())
+            Thread.sleep(1_000)
         }
     }
 
@@ -51,10 +50,6 @@ class MockStocksService @Inject constructor(
             history[id] = List(20) { first + offset(first) }
         }
         return history[id] ?: throw IllegalArgumentException("ID $id was not found")
-    }
-
-    override fun release() {
-        isRunning = false
     }
 
     private fun findDto(id: String): MockData {

@@ -8,8 +8,11 @@ import java.io.BufferedReader
 import java.io.InputStreamReader
 import javax.inject.Inject
 
+/**
+ * @author k.i.tayupov
+ */
 class MockCommonService @Inject constructor(
-  private val context: Context
+    private val context: Context,
 ) {
 
     internal val dto = getDto()

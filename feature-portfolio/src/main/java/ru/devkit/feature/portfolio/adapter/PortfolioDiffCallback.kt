@@ -5,7 +5,10 @@ import androidx.recyclerview.widget.DiffUtil
 import ru.devkit.ui.model.*
 import ru.devkit.ui.model.ListItemUiModel
 
-class PortfolioDiffCallback : DiffUtil.ItemCallback<ListItemUiModel>() {
+/**
+ * @author k.i.tayupov
+ */
+internal class PortfolioDiffCallback : DiffUtil.ItemCallback<ListItemUiModel>() {
 
     override fun areItemsTheSame(oldItem: ListItemUiModel, newItem: ListItemUiModel): Boolean {
         return oldItem.name == newItem.name

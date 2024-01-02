@@ -1,5 +1,8 @@
 package ru.devkit.ui.model
 
+/**
+ * @author k.i.tayupov
+ */
 data class PortfolioUiModel(
     val items: List<ListItemUiModel>,
     val totalValue: String,
@@ -7,6 +10,7 @@ data class PortfolioUiModel(
     val totalDiffPercentage: String,
     val totalDiffSign: DiffSign
 ) {
+
     companion object {
         val EMPTY = PortfolioUiModel(
             items = emptyList(),

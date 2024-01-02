@@ -13,6 +13,9 @@ import ru.devkit.feature.summary.mapper.SummaryDomainToUiMapper
 import javax.inject.Inject
 import javax.inject.Singleton
 
+/**
+ * @author k.i.tayupov
+ */
 @Singleton
 class SummaryViewModel @Inject constructor(
     private val repository: PortfolioRepository,

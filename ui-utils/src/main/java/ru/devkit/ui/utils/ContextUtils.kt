@@ -6,6 +6,9 @@ import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
 import androidx.core.content.ContextCompat
 
+/**
+ * @author k.i.tayupov
+ */
 @ColorInt
 fun Context.getColorResCompat(@AttrRes id: Int): Int {
     val resolvedAttr = TypedValue()

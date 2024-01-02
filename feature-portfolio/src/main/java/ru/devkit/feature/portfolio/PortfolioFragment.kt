@@ -19,6 +19,9 @@ import ru.devkit.ui.ListItemComponent
 import ru.devkit.ui.model.PortfolioUiModel
 import javax.inject.Inject
 
+/**
+ * @author k.i.tayupov
+ */
 class PortfolioFragment : Fragment() {
 
     @Inject

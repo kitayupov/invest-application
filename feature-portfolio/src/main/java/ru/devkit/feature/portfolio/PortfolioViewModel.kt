@@ -12,6 +12,9 @@ import ru.devkit.feature.portfolio.mapper.PortfolioDomainToUiMapper
 import ru.devkit.ui.model.PortfolioUiModel
 import javax.inject.Inject
 
+/**
+ * @author k.i.tayupov
+ */
 class PortfolioViewModel @Inject constructor(
     private val repository: PortfolioRepository,
     private val mapper: PortfolioDomainToUiMapper,

@@ -5,6 +5,9 @@ import android.os.Bundle
 import ru.devkit.feature.portfolio.PortfolioFragment
 import ru.devkit.investapplication.app.App
 
+/**
+* @author k.i.tayupov
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

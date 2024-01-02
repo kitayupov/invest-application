@@ -25,6 +25,9 @@ import ru.devkit.feature.summary.di.SummaryComponent
 import ru.devkit.ui.utils.getColorResCompat
 import javax.inject.Inject
 
+/**
+ * @author k.i.tayupov
+ */
 class SummaryFragment : Fragment() {
 
     @Inject

@@ -8,9 +8,12 @@ import ru.devkit.service.api.StocksServiceApi
 import ru.devkit.service.api.data.InvestmentApi
 import javax.inject.Inject
 
+/**
+ * @author k.i.tayupov
+ */
 class PortfolioRepository @Inject constructor(
     private val portfolioService: PortfolioServiceApi,
-    private val stocksService: StocksServiceApi
+    private val stocksService: StocksServiceApi,
 ) {
 
     val data = portfolioService.getPortfolio()
