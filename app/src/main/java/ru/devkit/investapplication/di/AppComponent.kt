@@ -5,7 +5,7 @@ import ru.devkit.feature.portfolio.di.PortfolioModule
 import ru.devkit.feature.stock.history.di.StockHistoryModule
 import ru.devkit.feature.summary.di.SummaryModule
 import ru.devkit.investapplication.MainActivity
-import ru.devkit.repository.impl.di.RepositoryModule
+import ru.devkit.service.impl.di.RepositoryModule
 
 /**
  * @author k.i.tayupov
