@@ -15,7 +15,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Invest Application"
+rootProject.name = "invest-application"
 
 include(":app")
 
