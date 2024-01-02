@@ -2,6 +2,8 @@ package ru.devkit.feature.portfolio
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -18,8 +20,12 @@ class PortfolioViewModel @Inject constructor(
     private val _model = MutableStateFlow(PortfolioUiModel.EMPTY)
     val model = _model.asStateFlow()
 
+    private val coroutineExceptionHandler: CoroutineExceptionHandler = CoroutineExceptionHandler { _, error ->
+        error.printStackTrace()
+    }
+
     init {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             repository.data.collect {
                 _model.value = mapper(it)
             }
