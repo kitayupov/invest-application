@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavDeepLinkRequest
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.coroutines.launch
 import ru.devkit.feature.portfolio.adapter.PortfolioAdapter
@@ -33,6 +36,7 @@ class PortfolioFragment : Fragment() {
         (activity?.application as PortfolioComponent).inject(this)
         setupRecyclerView()
         setupDataUpdate()
+        setupNavigation()
     }
 
     private fun setupRecyclerView() {
@@ -59,6 +63,15 @@ class PortfolioFragment : Fragment() {
                 diffColor = model.totalDiffSign.color
             )
         )
+    }
+
+    private fun setupNavigation() {
+        binding.summaryButton.setOnClickListener {
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("android-app://ru.devkit.invest.application/summary_fragment".toUri())
+                .build()
+            findNavController().navigate(request)
+        }
     }
 
     companion object {

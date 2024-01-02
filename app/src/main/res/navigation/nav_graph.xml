@@ -24,6 +24,10 @@
     <fragment
         android:id="@+id/summaryFragment"
         android:name="ru.devkit.feature.summary.SummaryFragment"
-        android:label="SummaryFragment" />
+        android:label="SummaryFragment">
+
+        <deepLink app:uri="android-app://ru.devkit.invest.application/summary_fragment" />
+
+    </fragment>
 
 </navigation>

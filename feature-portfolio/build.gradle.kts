@@ -52,4 +52,6 @@ dependencies {
     // Dagger
     implementation("com.google.dagger:dagger:2.46.1")
     kapt("com.google.dagger:dagger-compiler:2.46.1")
+    // Navigation
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
 }
