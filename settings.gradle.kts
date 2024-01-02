@@ -15,3 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Invest Application"
 include(":app")
+include(":feature-portfolio")
