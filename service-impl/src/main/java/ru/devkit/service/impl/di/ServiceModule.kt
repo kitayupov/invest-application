@@ -11,11 +11,11 @@ import ru.devkit.service.api.StocksServiceApi
  * @author k.i.tayupov
  */
 @Module
-interface RepositoryModule {
+interface ServiceModule {
 
     @Binds
-    fun portfolioRepository(impl: MockPortfolioService): PortfolioServiceApi
+    fun portfolioService(impl: MockPortfolioService): PortfolioServiceApi
 
     @Binds
-    fun stockRepository(impl: MockStocksService): StocksServiceApi
+    fun stockService(impl: MockStocksService): StocksServiceApi
 }
