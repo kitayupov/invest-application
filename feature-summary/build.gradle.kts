@@ -40,6 +40,7 @@ android {
 dependencies {
     implementation(project(":domain-repository"))
     implementation(project(":ui"))
+    implementation(project(":ui-utils"))
     implementation(project(":utils"))
     // Core
     implementation("androidx.core:core-ktx:1.12.0")

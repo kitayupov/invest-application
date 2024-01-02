@@ -1,5 +1,6 @@
 package ru.devkit.feature.portfolio
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -26,6 +27,11 @@ class PortfolioFragment : Fragment() {
     private lateinit var binding: FragmentPortfolioBinding
     private lateinit var portfolioAdapter: PortfolioAdapter
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (activity?.application as PortfolioComponent).inject(this)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = FragmentPortfolioBinding.inflate(inflater, container, false)
         return binding.root
@@ -33,7 +39,6 @@ class PortfolioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        (activity?.application as PortfolioComponent).inject(this)
         setupRecyclerView()
         setupDataUpdate()
         setupNavigation()
