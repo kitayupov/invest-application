@@ -1,7 +1,7 @@
 package ru.devkit.service.mock.impl
 
 import ru.devkit.service.api.StocksServiceApi
-import ru.devkit.service.api.data.Stock
+import ru.devkit.service.api.data.StockApi
 import ru.devkit.service.mock.impl.data.MockData
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
@@ -33,10 +33,10 @@ class MockStocksService @Inject constructor(
         }
     }
 
-    override fun getStock(id: String): Stock {
+    override fun getStock(id: String): StockApi {
         val stock = findDto(id)
         val history = getStockHistory(id)
-        return Stock(
+        return StockApi(
             id = stock.id,
             name = stock.name,
             currentPrice = history.last(),

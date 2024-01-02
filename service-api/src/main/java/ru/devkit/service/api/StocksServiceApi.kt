@@ -1,9 +1,9 @@
 package ru.devkit.service.api
 
-import ru.devkit.service.api.data.Stock
+import ru.devkit.service.api.data.StockApi
 
 interface StocksServiceApi {
-    fun getStock(id: String): Stock
+    fun getStock(id: String): StockApi
     fun getStockHistory(id: String): List<Double>
     fun release()
 }
