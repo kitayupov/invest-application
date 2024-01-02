@@ -45,4 +45,6 @@ dependencies {
     // Dagger
     implementation("com.google.dagger:dagger:2.46.1")
     kapt("com.google.dagger:dagger-compiler:2.46.1")
+    // Feature
+    implementation(project(":feature-portfolio"))
 }
