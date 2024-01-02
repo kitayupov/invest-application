@@ -11,9 +11,5 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         (application as App).appComponent.inject(this)
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, PortfolioFragment.newInstance())
-            .commit()
     }
 }

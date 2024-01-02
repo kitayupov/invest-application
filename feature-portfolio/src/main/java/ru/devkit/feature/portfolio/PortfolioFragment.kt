@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class PortfolioFragment private constructor() : Fragment() {
+class PortfolioFragment : Fragment() {
 
     private lateinit var viewModel: PortfolioViewModel
 

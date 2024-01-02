@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class StockHistoryFragment private constructor(): Fragment() {
+class StockHistoryFragment : Fragment() {
 
     private lateinit var viewModel: StockHistoryViewModel
 

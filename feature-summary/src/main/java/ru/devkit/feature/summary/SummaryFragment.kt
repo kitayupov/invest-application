@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class SummaryFragment private constructor() : Fragment() {
+class SummaryFragment : Fragment() {
 
     private lateinit var viewModel: SummaryViewModel
 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/portfolioFragment">
+
+    <fragment
+        android:id="@+id/portfolioFragment"
+        android:name="ru.devkit.feature.portfolio.PortfolioFragment"
+        android:label="PortfolioFragment" >
+        <action
+            android:id="@+id/action_portfolioFragment_to_stockHistoryFragment"
+            app:destination="@id/stockHistoryFragment" />
+        <action
+            android:id="@+id/action_portfolioFragment_to_summaryFragment"
+            app:destination="@id/summaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/stockHistoryFragment"
+        android:name="ru.devkit.feature.stock.history.StockHistoryFragment"
+        android:label="StockHistoryFragment" />
+
+    <fragment
+        android:id="@+id/summaryFragment"
+        android:name="ru.devkit.feature.summary.SummaryFragment"
+        android:label="SummaryFragment" />
+
+</navigation>
