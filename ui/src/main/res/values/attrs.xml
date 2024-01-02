@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ListItemComponent">
+        <attr name="name" format="string"/>
+        <attr name="nameTextSize" format="dimension"/>
+        <attr name="valueTextSize" format="dimension"/>
+        <attr name="diffTextSize" format="dimension"/>
+        <attr name="showDiff" format="boolean"/>
+    </declare-styleable>
+</resources>
