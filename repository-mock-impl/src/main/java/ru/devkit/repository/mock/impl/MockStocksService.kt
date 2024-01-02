@@ -1,8 +1,8 @@
-package ru.devkit.repository.impl
+package ru.devkit.repository.mock.impl
 
 import ru.devkit.repository.api.StocksApi
 import ru.devkit.repository.api.data.Stock
-import ru.devkit.repository.impl.data.MockData
+import ru.devkit.repository.mock.impl.data.MockData
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 import kotlin.concurrent.thread

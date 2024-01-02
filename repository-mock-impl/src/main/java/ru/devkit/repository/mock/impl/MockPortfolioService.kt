@@ -1,4 +1,4 @@
-package ru.devkit.repository.impl
+package ru.devkit.repository.mock.impl
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow

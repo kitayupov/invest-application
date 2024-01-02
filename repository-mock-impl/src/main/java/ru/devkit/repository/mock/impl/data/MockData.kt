@@ -1,4 +1,4 @@
-package ru.devkit.repository.impl.data
+package ru.devkit.repository.mock.impl.data
 
 data class MockData(
     val id: String,
