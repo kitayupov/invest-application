@@ -1,15 +1,17 @@
 package ru.devkit.feature.portfolio
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ru.devkit.feature.portfolio.di.PortfolioComponent
+import javax.inject.Inject
 
 class PortfolioFragment : Fragment() {
 
-    private lateinit var viewModel: PortfolioViewModel
+    @Inject
+    lateinit var viewModel: PortfolioViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,8 +22,8 @@ class PortfolioFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(PortfolioViewModel::class.java)
-        // TODO: Use the ViewModel
+        (activity?.application as PortfolioComponent).inject(this)
+        System.err.println("portfolio: ${viewModel.model.value}")
     }
 
     companion object {
