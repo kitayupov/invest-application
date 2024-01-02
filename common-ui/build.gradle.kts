@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.devkit.ui.model"
+    namespace = "ru.devkit.ui"
     compileSdk = 34
 
     defaultConfig {
@@ -12,6 +12,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        viewBinding {
+            enable = true
+        }
     }
 
     buildTypes {
@@ -33,8 +37,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":utils"))
-
     // Core
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

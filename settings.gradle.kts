@@ -18,14 +18,18 @@ dependencyResolutionManagement {
 rootProject.name = "Invest Application"
 
 include(":app")
-include(":feature-portfolio")
-include(":feature-stock-history")
-include(":feature-summary")
+
+include(":common-ui")
+include(":common-ui-models")
+include(":common-ui-utils")
+include(":common-utils")
+
 include(":service-api")
 include(":service-impl")
 include(":service-mock-impl")
+
 include(":domain-repository")
-include(":ui")
-include(":ui-model")
-include(":ui-utils")
-include(":utils")
+
+include(":feature-portfolio")
+include(":feature-stock-history")
+include(":feature-summary")
