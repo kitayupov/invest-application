@@ -13,6 +13,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        viewBinding {
+            enable = true
+        }
     }
 
     buildTypes {
@@ -35,6 +39,7 @@ android {
 
 dependencies {
     implementation(project(":domain-repository"))
+    implementation(project(":ui"))
     implementation(project(":utils"))
     // Core
     implementation("androidx.core:core-ktx:1.12.0")
@@ -46,4 +51,6 @@ dependencies {
     // Dagger
     implementation("com.google.dagger:dagger:2.46.1")
     kapt("com.google.dagger:dagger-compiler:2.46.1")
+    // Chart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
