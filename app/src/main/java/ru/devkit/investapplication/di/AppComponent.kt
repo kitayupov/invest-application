@@ -2,12 +2,10 @@ package ru.devkit.investapplication.di
 
 import dagger.Component
 import ru.devkit.feature.portfolio.PortfolioFragment
-import ru.devkit.feature.portfolio.di.PortfolioModule
-import ru.devkit.feature.stock.history.di.StockHistoryModule
 import ru.devkit.feature.summary.SummaryFragment
-import ru.devkit.feature.summary.di.SummaryModule
 import ru.devkit.investapplication.MainActivity
 import ru.devkit.service.impl.di.ServiceModule
+import javax.inject.Singleton
 
 /**
  * @author k.i.tayupov
@@ -15,12 +13,10 @@ import ru.devkit.service.impl.di.ServiceModule
 @Component(
     modules = [
         AppModule::class,
-        PortfolioModule::class,
-        StockHistoryModule::class,
-        SummaryModule::class,
         ServiceModule::class,
     ]
 )
+@Singleton
 interface AppComponent {
 
     fun inject(activity: MainActivity)

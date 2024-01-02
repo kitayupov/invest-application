@@ -34,6 +34,7 @@ android {
 }
 
 dependencies {
+    api(project(":service-api"))
     // Core
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -43,6 +44,4 @@ dependencies {
     kapt("com.google.dagger:dagger-compiler:2.46.1")
     // Json
     implementation("com.google.code.gson:gson:2.10.1")
-
-    api(project(":service-api"))
 }
