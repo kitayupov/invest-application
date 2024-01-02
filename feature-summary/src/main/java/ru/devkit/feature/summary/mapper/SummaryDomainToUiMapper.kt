@@ -5,11 +5,12 @@ import ru.devkit.feature.summary.data.SummaryItemUiModel
 import ru.devkit.feature.summary.data.SummaryUiModel
 import ru.devkit.utils.formatCurrencyPrice
 import ru.devkit.utils.formatPercentage
+import javax.inject.Inject
 
 /**
  * @author k.i.tayupov
  */
-class SummaryDomainToUiMapper {
+class SummaryDomainToUiMapper @Inject constructor() {
 
     operator fun invoke(from: Portfolio): SummaryUiModel {
         val items = from.investments.map {

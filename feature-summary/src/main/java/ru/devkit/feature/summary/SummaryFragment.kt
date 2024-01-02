@@ -1,15 +1,17 @@
 package ru.devkit.feature.summary
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import ru.devkit.feature.summary.di.SummaryComponent
+import javax.inject.Inject
 
 class SummaryFragment : Fragment() {
 
-    private lateinit var viewModel: SummaryViewModel
+    @Inject
+    lateinit var viewModel: SummaryViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,8 +22,8 @@ class SummaryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        viewModel = ViewModelProvider(this).get(SummaryViewModel::class.java)
-        // TODO: Use the ViewModel
+        (activity?.application as SummaryComponent).inject(this)
+        System.err.println("Summary: ${viewModel.model}")
     }
 
     companion object {
