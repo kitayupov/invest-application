@@ -8,10 +8,12 @@ import ru.devkit.service.data.InvestmentApi
 import ru.devkit.service.data.PortfolioApi
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * @author k.i.tayupov
  */
+@Singleton
 class MockPortfolioService @Inject constructor(
     private val commonService: MockCommonService,
 ) : PortfolioServiceApi {

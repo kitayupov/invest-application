@@ -13,7 +13,9 @@ import ru.devkit.domain.repository.mapper.InvestmentDbToDomainMapper
 import ru.devkit.service.PortfolioServiceApi
 import ru.devkit.service.StocksServiceApi
 import javax.inject.Inject
+import javax.inject.Singleton
 
+@Singleton
 class PortfolioRepositoryImpl @Inject constructor(
     private val context: Context,
     private val portfolioService: PortfolioServiceApi,

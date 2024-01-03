@@ -7,10 +7,12 @@ import ru.devkit.service.mock.data.MockData
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * @author k.i.tayupov
  */
+@Singleton
 class MockCommonService @Inject constructor(
     private val context: Context,
 ) {

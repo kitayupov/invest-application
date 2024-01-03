@@ -5,12 +5,14 @@ import ru.devkit.service.data.StockApi
 import ru.devkit.service.mock.data.MockData
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
+import javax.inject.Singleton
 import kotlin.concurrent.thread
 import kotlin.random.Random
 
 /**
  * @author k.i.tayupov
  */
+@Singleton
 class MockStocksService @Inject constructor(
     private val commonService: MockCommonService,
 ) : StocksServiceApi {
@@ -51,7 +53,7 @@ class MockStocksService @Inject constructor(
         val history = cache.get()
         if (history.containsKey(symbol).not()) {
             val first = findDto(symbol).price
-            history[symbol] = List(100) { first + offset(first) }
+            history[symbol] = List(10) { first + offset(first) }
         }
         return history[symbol] ?: throw IllegalArgumentException("ID $symbol was not found")
     }
