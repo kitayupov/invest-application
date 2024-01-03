@@ -24,6 +24,12 @@ class MainActivity : AppCompatActivity() {
         (application as App).appComponent.inject(this)
     }
 
+    override fun onStart() {
+        super.onStart()
+        mockPortfolioService.start()
+        mockStocksService.start()
+    }
+
     override fun onStop() {
         super.onStop()
         mockPortfolioService.release()

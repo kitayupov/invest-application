@@ -20,9 +20,10 @@ class MockPortfolioService @Inject constructor(
 
     private var data = AtomicReference(PortfolioApi(emptyList()))
 
-    private var isRunning = true
+    private var isRunning = false
 
-    init {
+    fun start() {
+        isRunning = true
         data.set(
             PortfolioApi(
                 items = commonService.dto.map {

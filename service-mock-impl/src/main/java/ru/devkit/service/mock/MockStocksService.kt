@@ -19,9 +19,10 @@ class MockStocksService @Inject constructor(
 
     private val cache = AtomicReference(mutableMapOf<String, List<Double>>())
 
-    private var isRunning = true
+    private var isRunning = false
 
-    init {
+    fun start() {
+        isRunning = true
         thread {
             while (isRunning) {
                 val update = cache.get().mapValues { (_, value) ->
@@ -36,6 +37,10 @@ class MockStocksService @Inject constructor(
                 Thread.sleep(1_000)
             }
         }
+    }
+
+    fun release() {
+        isRunning = false
     }
 
     override fun getStock(symbol: String): StockApi {
@@ -56,10 +61,6 @@ class MockStocksService @Inject constructor(
             history[symbol] = List(20) { first + offset(first) }
         }
         return history[symbol] ?: throw IllegalArgumentException("ID $symbol was not found")
-    }
-
-    fun release() {
-        isRunning = false
     }
 
     private fun findDto(id: String): MockData {
