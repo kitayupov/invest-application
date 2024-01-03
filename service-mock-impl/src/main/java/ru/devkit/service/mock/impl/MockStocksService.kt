@@ -51,7 +51,7 @@ class MockStocksService @Inject constructor(
         val history = cache.get()
         if (history.containsKey(symbol).not()) {
             val first = findDto(symbol).price
-            history[symbol] = List(20) { first + offset(first) }
+            history[symbol] = List(100) { first + offset(first) }
         }
         return history[symbol] ?: throw IllegalArgumentException("ID $symbol was not found")
     }
