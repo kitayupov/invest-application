@@ -31,7 +31,7 @@ class SummaryViewModel @Inject constructor(
 
     init {
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-            repository.data.collect {
+            repository.getPortfolio().collect {
                 _model.value = mapper(it)
             }
         }

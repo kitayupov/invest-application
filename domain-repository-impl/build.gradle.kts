@@ -5,6 +5,7 @@ plugins {
 }
 
 dependencies {
+    api(project(":domain-repository-api"))
     api(project(":service-api"))
     // Coroutines
     implementation ("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")

@@ -52,8 +52,9 @@ dependencies {
     implementation(project(":feature-portfolio"))
     implementation(project(":feature-stock-history"))
     implementation(project(":feature-summary"))
-    implementation(project(":domain-repository"))
-    // Mock
+    // Domain
+    implementation(project(":domain-repository-impl"))
     implementation(project(":service-impl"))
+    // Mock
     implementation(project(":service-mock-impl"))
 }

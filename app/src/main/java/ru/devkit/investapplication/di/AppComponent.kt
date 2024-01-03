@@ -1,6 +1,7 @@
 package ru.devkit.investapplication.di
 
 import dagger.Component
+import ru.devkit.domain.repository.di.RepositoryModule
 import ru.devkit.feature.portfolio.PortfolioFragment
 import ru.devkit.feature.stock.history.StockHistoryFragment
 import ru.devkit.feature.summary.SummaryFragment
@@ -15,6 +16,7 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         ServiceModule::class,
+        RepositoryModule::class,
     ]
 )
 @Singleton

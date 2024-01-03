@@ -28,8 +28,9 @@ include(":service-api")
 include(":service-impl")
 include(":service-mock-impl")
 
-include(":domain-repository")
+include(":domain-repository-api")
 
 include(":feature-portfolio")
 include(":feature-stock-history")
 include(":feature-summary")
+include(":domain-repository-impl")
