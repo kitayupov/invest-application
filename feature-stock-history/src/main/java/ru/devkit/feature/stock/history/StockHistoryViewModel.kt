@@ -2,6 +2,8 @@ package ru.devkit.feature.stock.history
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -15,7 +17,7 @@ import javax.inject.Inject
  */
 class StockHistoryViewModel @Inject constructor(
     private val repository: PortfolioRepository,
-    private val mapper: InvestmentDomainToUiMapper
+    private val mapper: InvestmentDomainToUiMapper,
 ) : ViewModel() {
 
     private val _model = MutableStateFlow(InvestmentUiModel.EMPTY)
@@ -24,8 +26,12 @@ class StockHistoryViewModel @Inject constructor(
     private val _ticks = MutableStateFlow(emptyList<Double>())
     val ticks = _ticks.asStateFlow()
 
+    private val coroutineExceptionHandler: CoroutineExceptionHandler = CoroutineExceptionHandler { _, error ->
+        error.printStackTrace()
+    }
+
     fun attach(symbol: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             repository.data.collect {
                 val investment = it.investments.find { investment -> investment.id == symbol } ?: return@collect
                 _model.value = mapper(investment)

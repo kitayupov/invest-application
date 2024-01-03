@@ -10,7 +10,7 @@ data class InvestmentUiModel(
     val value: String,
     val diffValue: String,
     val diffPercentage: String,
-    val diffSign: DiffSign
+    val diffSign: DiffSign,
 ) {
 
     companion object {
