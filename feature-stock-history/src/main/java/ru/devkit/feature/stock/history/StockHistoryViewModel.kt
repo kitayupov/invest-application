@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -30,12 +31,18 @@ class StockHistoryViewModel @Inject constructor(
         error.printStackTrace()
     }
 
+    private var job: Job = Job()
+
     fun attach(symbol: String) {
-        viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
+        job = viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             repository.getInvestment(symbol).collect {
                 _model.value = mapper(it)
                 _ticks.value = repository.getStockHistory(symbol)
             }
         }
+    }
+
+    fun detach() {
+        job.cancel()
     }
 }

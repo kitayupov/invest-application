@@ -54,6 +54,11 @@ class StockHistoryFragment : Fragment() {
         setupDataUpdate()
     }
 
+    override fun onPause() {
+        super.onPause()
+        viewModel.detach()
+    }
+
     private fun setupDataUpdate() {
         lifecycleScope.launch {
             viewModel.model.collectLatest(::updateData)

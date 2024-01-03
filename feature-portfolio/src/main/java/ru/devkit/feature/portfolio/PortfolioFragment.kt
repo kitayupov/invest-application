@@ -43,8 +43,18 @@ class PortfolioFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
-        setupDataUpdate()
         setupNavigation()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.attach()
+        setupDataUpdate()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.detach()
     }
 
     private fun setupRecyclerView() {
