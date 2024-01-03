@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -27,11 +28,17 @@ class SummaryViewModel @Inject constructor(
         error.printStackTrace()
     }
 
-    init {
-        viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
+    private var job: Job = Job()
+
+    fun attach() {
+        job = viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             repository.getPortfolio().collect {
                 _model.value = mapper(it)
             }
         }
+    }
+
+    fun detach() {
+        job.cancel()
     }
 }

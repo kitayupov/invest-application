@@ -54,7 +54,13 @@ class SummaryFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        viewModel.attach()
         setupDataUpdate()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.detach()
     }
 
     private fun setupDataUpdate() {
@@ -66,7 +72,7 @@ class SummaryFragment : Fragment() {
     private fun updateData(model: SummaryUiModel) {
         binding.summaryTitle.valueTextView.text = model.totalValue
         binding.summaryChart.apply {
-            data.dataSet = createDataSet(model.items)
+            data = PieData().apply { addDataSet(createDataSet(model.items)) }
             data.setDrawValues(false)
             updateCenterText(model.items.find { it.id == selectedItemId })
             invalidate()
@@ -92,7 +98,6 @@ class SummaryFragment : Fragment() {
             setCenterTextColor(context.getColorResCompat(android.R.attr.textColorPrimary))
             setCenterTextTypeface(Typeface.DEFAULT_BOLD)
             setCenterTextSize(18f)
-            data = PieData().apply { addDataSet(PieDataSet(emptyList(), "")) }
             animateX(500)
         }
     }
