@@ -18,6 +18,8 @@ class MockPortfolioService @Inject constructor(
 
     private var data = AtomicReference(PortfolioApi(emptyList()))
 
+    private var isRunning = true
+
     init {
         data.set(
             PortfolioApi(
@@ -32,8 +34,14 @@ class MockPortfolioService @Inject constructor(
         )
     }
 
+    fun release() {
+        isRunning = false
+    }
+
     override fun getPortfolio(): Flow<PortfolioApi> = flow {
-        emit(data.get())
-        delay(1_000)
+        while (isRunning) {
+            emit(data.get())
+            delay(1_000)
+        }
     }
 }

@@ -17,18 +17,22 @@ class MockStocksService @Inject constructor(
 
     private val cache = AtomicReference(mutableMapOf<String, List<Double>>())
 
+    private var isRunning = true
+
     init {
         thread {
-            val update = cache.get().mapValues { (_, value) ->
-                if (Random.nextInt(5) == 0) {
-                    val last = value.last()
-                    value + (last + offset(last))
-                } else {
-                    value
+            while (isRunning) {
+                val update = cache.get().mapValues { (_, value) ->
+                    if (Random.nextInt(5) == 0) {
+                        val last = value.last()
+                        value + (last + offset(last))
+                    } else {
+                        value
+                    }
                 }
+                cache.set(update.toMutableMap())
+                Thread.sleep(1_000)
             }
-            cache.set(update.toMutableMap())
-            Thread.sleep(1_000)
         }
     }
 
@@ -50,6 +54,10 @@ class MockStocksService @Inject constructor(
             history[symbol] = List(20) { first + offset(first) }
         }
         return history[symbol] ?: throw IllegalArgumentException("ID $symbol was not found")
+    }
+
+    fun release() {
+        isRunning = false
     }
 
     private fun findDto(id: String): MockData {

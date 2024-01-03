@@ -34,8 +34,8 @@ class StockHistoryViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
             repository.getInvestment(symbol).collect {
                 _model.value = mapper(it)
+                _ticks.value = repository.getStockHistory(symbol)
             }
-            _ticks.value = repository.getStockHistory(symbol)
         }
     }
 }
