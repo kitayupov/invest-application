@@ -13,6 +13,10 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
+
+        viewBinding {
+            enable = true
+        }
     }
 
     buildTypes {
@@ -37,6 +41,7 @@ dependencies {
     implementation(project(":domain-repository"))
     implementation(project(":common-ui"))
     implementation(project(":common-ui-models"))
+    implementation(project(":common-ui-utils"))
     implementation(project(":common-utils"))
     // Core
     implementation("androidx.core:core-ktx:1.12.0")
