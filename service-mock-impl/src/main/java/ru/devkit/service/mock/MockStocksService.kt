@@ -1,8 +1,8 @@
-package ru.devkit.service.mock.impl
+package ru.devkit.service.mock
 
-import ru.devkit.service.api.StocksServiceApi
-import ru.devkit.service.api.data.StockApi
-import ru.devkit.service.mock.impl.data.MockData
+import ru.devkit.service.StocksServiceApi
+import ru.devkit.service.data.StockApi
+import ru.devkit.service.mock.data.MockData
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 import kotlin.concurrent.thread

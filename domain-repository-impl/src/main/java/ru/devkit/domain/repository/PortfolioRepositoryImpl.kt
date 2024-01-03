@@ -5,8 +5,8 @@ import kotlinx.coroutines.flow.map
 import ru.devkit.domain.repository.data.Investment
 import ru.devkit.domain.repository.data.Portfolio
 import ru.devkit.domain.repository.mapper.InvestmentApiToDomainMapper
-import ru.devkit.service.api.PortfolioServiceApi
-import ru.devkit.service.api.StocksServiceApi
+import ru.devkit.service.PortfolioServiceApi
+import ru.devkit.service.StocksServiceApi
 import javax.inject.Inject
 
 class PortfolioRepositoryImpl @Inject constructor(

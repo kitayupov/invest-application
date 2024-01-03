@@ -1,4 +1,4 @@
-package ru.devkit.service.api.data
+package ru.devkit.service.data
 
 /**
  * @author k.i.tayupov

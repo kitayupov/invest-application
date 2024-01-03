@@ -1,6 +1,6 @@
-package ru.devkit.service.api
+package ru.devkit.service
 
-import ru.devkit.service.api.data.StockApi
+import ru.devkit.service.data.StockApi
 
 /**
  * @author k.i.tayupov

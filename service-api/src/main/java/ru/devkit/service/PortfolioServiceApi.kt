@@ -1,7 +1,7 @@
-package ru.devkit.service.api
+package ru.devkit.service
 
 import kotlinx.coroutines.flow.Flow
-import ru.devkit.service.api.data.PortfolioApi
+import ru.devkit.service.data.PortfolioApi
 
 /**
  * @author k.i.tayupov

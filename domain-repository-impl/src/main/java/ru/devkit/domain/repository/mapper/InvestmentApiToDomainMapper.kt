@@ -1,8 +1,8 @@
 package ru.devkit.domain.repository.mapper
 
 import ru.devkit.domain.repository.data.Investment
-import ru.devkit.service.api.data.InvestmentApi
-import ru.devkit.service.api.data.StockApi
+import ru.devkit.service.data.InvestmentApi
+import ru.devkit.service.data.StockApi
 import javax.inject.Inject
 
 /**

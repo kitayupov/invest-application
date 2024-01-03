@@ -3,8 +3,8 @@ package ru.devkit.investapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.devkit.investapplication.app.App
-import ru.devkit.service.mock.impl.MockPortfolioService
-import ru.devkit.service.mock.impl.MockStocksService
+import ru.devkit.service.mock.MockPortfolioService
+import ru.devkit.service.mock.MockStocksService
 import javax.inject.Inject
 
 /**

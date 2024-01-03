@@ -1,4 +1,4 @@
-package ru.devkit.service.mock.impl.data
+package ru.devkit.service.mock.data
 
 /**
  * @author k.i.tayupov

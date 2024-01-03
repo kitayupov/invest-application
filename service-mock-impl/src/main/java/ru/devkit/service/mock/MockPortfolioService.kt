@@ -1,11 +1,11 @@
-package ru.devkit.service.mock.impl
+package ru.devkit.service.mock
 
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
-import ru.devkit.service.api.PortfolioServiceApi
-import ru.devkit.service.api.data.InvestmentApi
-import ru.devkit.service.api.data.PortfolioApi
+import ru.devkit.service.PortfolioServiceApi
+import ru.devkit.service.data.InvestmentApi
+import ru.devkit.service.data.PortfolioApi
 import java.util.concurrent.atomic.AtomicReference
 import javax.inject.Inject
 

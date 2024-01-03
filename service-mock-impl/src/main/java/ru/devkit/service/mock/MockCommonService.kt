@@ -1,9 +1,9 @@
-package ru.devkit.service.mock.impl
+package ru.devkit.service.mock
 
 import android.content.Context
 import com.google.gson.Gson
 import ru.devkit.repository.impl.R
-import ru.devkit.service.mock.impl.data.MockData
+import ru.devkit.service.mock.data.MockData
 import java.io.BufferedReader
 import java.io.InputStreamReader
 import javax.inject.Inject
