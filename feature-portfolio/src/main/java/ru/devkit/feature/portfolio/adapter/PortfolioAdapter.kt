@@ -47,7 +47,7 @@ internal class PortfolioAdapter: ListAdapter<ListItemUiModel, PortfolioAdapter.I
                     diffColor = model.diffSign.color
                 )
             )
-            setOnClickListener { onClickAction(model.id) }
+            setOnClickListener { onClickAction(model.symbol) }
         }
 
         fun bind(bundle: Bundle) = binding.run {

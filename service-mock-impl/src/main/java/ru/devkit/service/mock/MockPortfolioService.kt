@@ -27,8 +27,9 @@ class MockPortfolioService @Inject constructor(
         data.set(
             PortfolioApi(
                 items = commonService.dto.map {
+                    System.err.println(it)
                     InvestmentApi(
-                        symbol = it.id,
+                        symbol = it.symbol,
                         quantity = it.quantity,
                         initialPrice = it.price
                     )

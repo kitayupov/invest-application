@@ -16,7 +16,7 @@ class SummaryDomainToUiMapper @Inject constructor() {
         val items = from.investments.map {
             val percentage = it.value / from.totalValue
             SummaryItemUiModel(
-                id = it.symbol,
+                symbol = it.symbol,
                 name = it.name,
                 value = formatCurrencyPrice(it.value),
                 percentage = (it.value / from.totalValue).toFloat(),

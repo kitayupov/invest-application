@@ -1,108 +1,108 @@
 [
   {
-    "id": "AAPL",
+    "symbol": "AAPL",
     "name": "Apple Inc.",
     "quantity": 8,
     "price": 173.28
   },
   {
-    "id": "MU",
+    "symbol": "MU",
     "name": "Micron Technology Inc.",
     "quantity": 15,
     "price": 67.44
   },
   {
-    "id": "XOM",
+    "symbol": "XOM",
     "name": "Exxon Mobil Corporation",
     "quantity": 13,
     "price": 111.24
   },
   {
-    "id": "GOOGL",
+    "symbol": "GOOGL",
     "name": "Alphabet Inc.",
     "quantity": 10,
     "price": 136.06
   },
   {
-    "id": "BRK.B",
+    "symbol": "BRK.B",
     "name": "Berkshire Hathaway Inc.",
     "quantity": 3,
     "price": 336.70
   },
   {
-    "id": "MSFT",
+    "symbol": "MSFT",
     "name": "Microsoft Corporation",
     "quantity": 3,
     "price": 327.17
   },
   {
-    "id": "INTC",
+    "symbol": "INTC",
     "name": "Intel Corporation",
     "quantity": 35,
     "price": 35.02
   },
   {
-    "id": "CSCO",
+    "symbol": "CSCO",
     "name": "Cisco Systems Inc.",
     "quantity": 25,
     "price": 53.05
   },
   {
-    "id": "CMCSA",
+    "symbol": "CMCSA",
     "name": "Comcast Corporation",
     "quantity": 25,
     "price": 42.84
   },
   {
-    "id": "ZNGA",
+    "symbol": "ZNGA",
     "name": "Zynga Inc.",
     "quantity": 300,
     "price": 3.69
   },
   {
-    "id": "META",
+    "symbol": "META",
     "name": "Meta Platforms Inc.",
     "quantity": 4,
     "price": 309.57
   },
   {
-    "id": "SIRI",
+    "symbol": "SIRI",
     "name": "Sirius XM Holdings Inc.",
     "quantity": 250,
     "price": 4.465
   },
   {
-    "id": "GILD",
+    "symbol": "GILD",
     "name": "Gilead Sciences Inc.",
     "quantity": 15,
     "price": 78.26
   },
   {
-    "id": "NVDA",
-    "name": "NVIDIA Corporation",
+    "symbol": "NVDA",
+    "name": "NVsymbolIA Corporation",
     "quantity": 3,
     "price": 414.37
   },
   {
-    "id": "JD",
+    "symbol": "JD",
     "name": "JD.com Inc.",
     "quantity": 50,
     "price": 24.33
   },
   {
-    "id": "QCOM",
+    "symbol": "QCOM",
     "name": "QUALCOMM Incorporated",
     "quantity": 10,
     "price": 109.37
   },
   {
-    "id": "AMAT",
+    "symbol": "AMAT",
     "name": "Applied Materials Inc.",
     "quantity": 10,
     "price": 134.13
   },
   {
-    "id": "WYNN",
+    "symbol": "WYNN",
     "name": "Wynn Resorts Limited",
     "quantity": 15,
     "price": 87.77

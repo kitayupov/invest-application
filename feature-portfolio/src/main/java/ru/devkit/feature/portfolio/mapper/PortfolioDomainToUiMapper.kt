@@ -17,7 +17,7 @@ class PortfolioDomainToUiMapper @Inject constructor() {
     operator fun invoke(from: Portfolio): PortfolioUiModel {
         val items = from.investments.map {
             ListItemUiModel(
-                id = it.symbol,
+                symbol = it.symbol,
                 name = it.name,
                 value = formatCurrencyPrice(it.value),
                 diffValue = formatCurrencyPrice(it.difference),

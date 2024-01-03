@@ -47,7 +47,7 @@ class MockStocksService @Inject constructor(
         val stock = findDto(symbol)
         val history = getStockHistory(symbol)
         return StockApi(
-            symbol = stock.id,
+            symbol = stock.symbol,
             name = stock.name,
             currentPrice = history.last(),
             lastPrice = history.dropLast(1).last()
@@ -63,8 +63,8 @@ class MockStocksService @Inject constructor(
         return history[symbol] ?: throw IllegalArgumentException("ID $symbol was not found")
     }
 
-    private fun findDto(id: String): MockData {
-        return commonService.dto.find { it.id == id } ?: throw IllegalArgumentException("ID $id was not found")
+    private fun findDto(symbol: String): MockData {
+        return commonService.dto.find { it.symbol == symbol } ?: throw IllegalArgumentException("ID $symbol was not found")
     }
 
     private fun offset(value: Double) = Random.nextDouble(-value * 0.1, value * 0.1)

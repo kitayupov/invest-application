@@ -74,7 +74,7 @@ class SummaryFragment : Fragment() {
         binding.summaryChart.apply {
             data = PieData().apply { addDataSet(createDataSet(model.items)) }
             data.setDrawValues(false)
-            updateCenterText(model.items.find { it.id == selectedItemId })
+            updateCenterText(model.items.find { it.symbol == selectedItemId })
             invalidate()
         }
     }
@@ -115,7 +115,7 @@ class SummaryFragment : Fragment() {
     private fun updateCenterText(model: SummaryItemUiModel?) {
         with(binding.summaryChart) {
             if (model != null) {
-                selectedItemId = model.id
+                selectedItemId = model.symbol
                 centerText = "${model.name}\n\n${model.value}"
             } else {
                 selectedItemId = ""

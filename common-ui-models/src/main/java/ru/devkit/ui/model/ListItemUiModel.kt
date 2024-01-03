@@ -10,7 +10,7 @@ const val ARG_LAST_SIGN = "arg_last_sign"
  * @author k.i.tayupov
  */
 data class ListItemUiModel(
-    val id: String,
+    val symbol: String,
     val name: String,
     val value: String,
     val diffValue: String,
