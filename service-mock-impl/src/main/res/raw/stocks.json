@@ -48,18 +48,6 @@
     "price": 53.05
   },
   {
-    "id": "CMCSA",
-    "name": "Comcast Corporation",
-    "quantity": 25,
-    "price": 42.84
-  },
-  {
-    "id": "ZNGA",
-    "name": "Zynga Inc.",
-    "quantity": 300,
-    "price": 3.69
-  },
-  {
     "id": "META",
     "name": "Meta Platforms Inc.",
     "quantity": 4,
@@ -72,39 +60,15 @@
     "price": 4.465
   },
   {
-    "id": "GILD",
-    "name": "Gilead Sciences Inc.",
-    "quantity": 15,
-    "price": 78.26
-  },
-  {
     "id": "NVDA",
     "name": "NVIDIA Corporation",
     "quantity": 3,
     "price": 414.37
   },
   {
-    "id": "JD",
-    "name": "JD.com Inc.",
-    "quantity": 50,
-    "price": 24.33
-  },
-  {
     "id": "QCOM",
     "name": "QUALCOMM Incorporated",
     "quantity": 10,
     "price": 109.37
-  },
-  {
-    "id": "AMAT",
-    "name": "Applied Materials Inc.",
-    "quantity": 10,
-    "price": 134.13
-  },
-  {
-    "id": "WYNN",
-    "name": "Wynn Resorts Limited",
-    "quantity": 15,
-    "price": 87.77
   }
 ]
