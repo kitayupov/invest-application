@@ -32,11 +32,10 @@ class StockHistoryViewModel @Inject constructor(
 
     fun attach(symbol: String) {
         viewModelScope.launch(Dispatchers.IO + coroutineExceptionHandler) {
-            repository.getPortfolio().collect {
-                val investment = it.investments.find { investment -> investment.id == symbol } ?: return@collect
-                _model.value = mapper(investment)
-                _ticks.value = repository.getStockHistory(symbol)
+            repository.getInvestment(symbol).collect {
+                _model.value = mapper(it)
             }
+            _ticks.value = repository.getStockHistory(symbol)
         }
     }
 }
