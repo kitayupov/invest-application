@@ -1,19 +1,26 @@
 package ru.devkit.feature.stock.history
 
-import androidx.lifecycle.ViewModelProvider
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import ru.devkit.feature.stock.history.di.StockHistoryComponent
+import javax.inject.Inject
 
 /**
  * @author k.i.tayupov
  */
 class StockHistoryFragment : Fragment() {
 
-    private lateinit var viewModel: StockHistoryViewModel
+    @Inject
+    lateinit var viewModel: StockHistoryViewModel
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        (activity?.application as StockHistoryComponent).inject(this)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_stock_history, container, false)
@@ -21,12 +28,8 @@ class StockHistoryFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(StockHistoryViewModel::class.java)
-        // TODO: Use the ViewModel
-
-        val symbol = arguments?.getString("symbol")
-        val title = view.findViewById<TextView>(R.id.title_view)
-        title.text = "${title.text}: $symbol"
+        val symbol = arguments?.getString("symbol") ?: return
+        viewModel.attach(symbol)
     }
 
     companion object {

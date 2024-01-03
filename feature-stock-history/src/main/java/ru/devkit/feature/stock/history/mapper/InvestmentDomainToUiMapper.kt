@@ -5,11 +5,12 @@ import ru.devkit.feature.stock.history.data.InvestmentUiModel
 import ru.devkit.ui.model.DiffSign
 import ru.devkit.utils.formatCurrencyPrice
 import ru.devkit.utils.formatPercentage
+import javax.inject.Inject
 
 /**
  * @author k.i.tayupov
  */
-class InvestmentDomainToUiMapper {
+class InvestmentDomainToUiMapper @Inject constructor() {
 
     operator fun invoke(from: Investment): InvestmentUiModel {
         return InvestmentUiModel(
