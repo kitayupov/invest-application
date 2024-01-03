@@ -35,6 +35,7 @@ android {
 
 dependencies {
     implementation(project(":domain-repository"))
+    implementation(project(":common-ui"))
     implementation(project(":common-ui-models"))
     implementation(project(":common-utils"))
     // Core
@@ -47,4 +48,6 @@ dependencies {
     // Dagger
     implementation("com.google.dagger:dagger:2.46.1")
     kapt("com.google.dagger:dagger-compiler:2.46.1")
+    // Chart
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
