@@ -23,6 +23,10 @@ class PortfolioRepository @Inject constructor(
             portfolio
         }
 
+    fun getStockHistory(symbol: String): List<Double> {
+        return stocksService.getStockHistory(symbol)
+    }
+
     private fun InvestmentApi.toInvestment(): Investment {
         val stock = stocksService.getStock(id)
         return Investment(
