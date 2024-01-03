@@ -80,6 +80,12 @@ class PortfolioFragment : Fragment() {
                 .build()
             findNavController().navigate(request)
         }
+        portfolioAdapter.onClickAction = { symbol ->
+            val request = NavDeepLinkRequest.Builder
+                .fromUri("android-app://ru.devkit.invest.application/stock_history_fragment/${symbol}".toUri())
+                .build()
+            findNavController().navigate(request)
+        }
     }
 
     companion object {

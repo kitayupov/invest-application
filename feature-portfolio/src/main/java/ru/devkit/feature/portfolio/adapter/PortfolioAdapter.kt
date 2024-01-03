@@ -13,7 +13,9 @@ import ru.devkit.ui.model.ListItemUiModel
 /**
  * @author k.i.tayupov
  */
-internal class PortfolioAdapter : ListAdapter<ListItemUiModel, PortfolioAdapter.InvestmentViewHolder>(PortfolioDiffCallback()) {
+internal class PortfolioAdapter: ListAdapter<ListItemUiModel, PortfolioAdapter.InvestmentViewHolder>(PortfolioDiffCallback()) {
+
+    var onClickAction: (String) -> Unit = {}
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): InvestmentViewHolder {
         val binding = ListItemPortfolioBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -45,6 +47,7 @@ internal class PortfolioAdapter : ListAdapter<ListItemUiModel, PortfolioAdapter.
                     diffColor = model.diffSign.color
                 )
             )
+            setOnClickListener { onClickAction(model.id) }
         }
 
         fun bind(bundle: Bundle) = binding.run {

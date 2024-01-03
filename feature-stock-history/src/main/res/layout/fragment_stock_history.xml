@@ -6,8 +6,9 @@
     tools:context=".StockHistoryFragment">
 
     <TextView
+        android:id="@+id/title_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hello" />
+        android:text="Stock History" />
 
 </FrameLayout>
