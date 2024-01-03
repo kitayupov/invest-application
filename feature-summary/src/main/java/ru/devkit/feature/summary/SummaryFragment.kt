@@ -123,8 +123,4 @@ class SummaryFragment : Fragment() {
             }
         }
     }
-
-    companion object {
-        fun newInstance() = SummaryFragment()
-    }
 }

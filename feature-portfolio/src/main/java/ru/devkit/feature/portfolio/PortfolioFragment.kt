@@ -97,8 +97,4 @@ class PortfolioFragment : Fragment() {
             findNavController().navigate(request)
         }
     }
-
-    companion object {
-        fun newInstance() = PortfolioFragment()
-    }
 }

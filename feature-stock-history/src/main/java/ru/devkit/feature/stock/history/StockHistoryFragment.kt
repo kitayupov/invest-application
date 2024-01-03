@@ -119,8 +119,4 @@ class StockHistoryFragment : Fragment() {
             animateX(500)
         }
     }
-
-    companion object {
-        fun newInstance() = StockHistoryFragment()
-    }
 }
