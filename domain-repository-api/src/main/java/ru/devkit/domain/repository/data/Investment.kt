@@ -4,7 +4,7 @@ package ru.devkit.domain.repository.data
  * @author k.i.tayupov
  */
 data class Investment(
-    val id: String,
+    val symbol: String,
     val name: String,
     val quantity: Int,
     val currentPrice: Double,

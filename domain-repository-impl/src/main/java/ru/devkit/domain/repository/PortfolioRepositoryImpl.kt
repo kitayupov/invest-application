@@ -18,14 +18,14 @@ class PortfolioRepositoryImpl @Inject constructor(
     override fun getPortfolio(): Flow<Portfolio> {
         return portfolioService.getPortfolio()
             .map { data ->
-                val investments = data.items.map { mapper(it, stocksService.getStock(it.id)) }
+                val investments = data.items.map { mapper(it, stocksService.getStock(it.symbol)) }
                 Portfolio(investments)
             }
     }
 
     override fun getInvestment(symbol: String): Flow<Investment> {
         return getPortfolio().map { portfolio ->
-            portfolio.investments.find { investment -> investment.id == symbol }
+            portfolio.investments.find { investment -> investment.symbol == symbol }
                 ?: throw IllegalArgumentException("Investment with symbol: \'$symbol\' was not found in portfolio")
         }
     }

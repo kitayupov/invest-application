@@ -23,7 +23,7 @@ class MockPortfolioService @Inject constructor(
             PortfolioApi(
                 items = commonService.dto.map {
                     InvestmentApi(
-                        id = it.id,
+                        symbol = it.id,
                         quantity = it.quantity,
                         initialPrice = it.price
                     )

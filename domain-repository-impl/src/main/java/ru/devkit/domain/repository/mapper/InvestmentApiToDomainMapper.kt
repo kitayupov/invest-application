@@ -12,7 +12,7 @@ class InvestmentApiToDomainMapper @Inject constructor() {
 
     operator fun invoke(from: InvestmentApi, stock: StockApi): Investment {
         return Investment(
-            id = from.id,
+            symbol = from.symbol,
             name = stock.name,
             quantity = from.quantity,
             currentPrice = stock.currentPrice,

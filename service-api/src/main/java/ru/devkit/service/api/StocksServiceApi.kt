@@ -7,7 +7,7 @@ import ru.devkit.service.api.data.StockApi
  */
 interface StocksServiceApi {
 
-    fun getStock(id: String): StockApi
+    fun getStock(symbol: String): StockApi
 
-    fun getStockHistory(id: String): List<Double>
+    fun getStockHistory(symbol: String): List<Double>
 }

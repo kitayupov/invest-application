@@ -32,24 +32,24 @@ class MockStocksService @Inject constructor(
         }
     }
 
-    override fun getStock(id: String): StockApi {
-        val stock = findDto(id)
-        val history = getStockHistory(id)
+    override fun getStock(symbol: String): StockApi {
+        val stock = findDto(symbol)
+        val history = getStockHistory(symbol)
         return StockApi(
-            id = stock.id,
+            symbol = stock.id,
             name = stock.name,
             currentPrice = history.last(),
             lastPrice = history.dropLast(1).last()
         )
     }
 
-    override fun getStockHistory(id: String): List<Double> {
+    override fun getStockHistory(symbol: String): List<Double> {
         val history = cache.get()
-        if (history.containsKey(id).not()) {
-            val first = findDto(id).price
-            history[id] = List(20) { first + offset(first) }
+        if (history.containsKey(symbol).not()) {
+            val first = findDto(symbol).price
+            history[symbol] = List(20) { first + offset(first) }
         }
-        return history[id] ?: throw IllegalArgumentException("ID $id was not found")
+        return history[symbol] ?: throw IllegalArgumentException("ID $symbol was not found")
     }
 
     private fun findDto(id: String): MockData {
