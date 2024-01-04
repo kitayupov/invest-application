@@ -12,9 +12,9 @@ fun formatCurrencyPrice(value: Number): String {
 
 fun formatPrice(value: Number): String {
     val symbols = DecimalFormatSymbols().apply { groupingSeparator = ' ' }
-    return DecimalFormat("#,###.00", symbols).format(value)
+    return DecimalFormat("#,##0.00", symbols).format(value)
 }
 
 fun formatPercentage(value: Number): String {
-    return String.format("%.2f %%", value)
+    return String.format("%.2f %%", value.toFloat())
 }
