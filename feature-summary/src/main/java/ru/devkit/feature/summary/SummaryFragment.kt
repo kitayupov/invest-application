@@ -21,7 +21,8 @@ import kotlinx.coroutines.launch
 import ru.devkit.feature.summary.data.SummaryItemUiModel
 import ru.devkit.feature.summary.data.SummaryUiModel
 import ru.devkit.feature.summary.databinding.FragmentSummaryBinding
-import ru.devkit.feature.summary.di.SummaryComponent
+import ru.devkit.feature.summary.di.DaggerSummaryComponent
+import ru.devkit.feature.summary.di.SummaryComponentDependenciesProvider
 import ru.devkit.ui.utils.getColorResCompat
 import javax.inject.Inject
 
@@ -39,7 +40,9 @@ class SummaryFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (activity?.application as SummaryComponent).inject(this)
+        val dependencies = (context.applicationContext as SummaryComponentDependenciesProvider)
+            .summaryComponentDependencies()
+        DaggerSummaryComponent.factory().create(dependencies).inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

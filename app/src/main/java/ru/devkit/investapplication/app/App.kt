@@ -5,8 +5,8 @@ import ru.devkit.feature.portfolio.di.PortfolioComponentDependencies
 import ru.devkit.feature.portfolio.di.PortfolioComponentDependenciesProvider
 import ru.devkit.feature.stock.history.StockHistoryFragment
 import ru.devkit.feature.stock.history.di.StockHistoryComponent
-import ru.devkit.feature.summary.SummaryFragment
-import ru.devkit.feature.summary.di.SummaryComponent
+import ru.devkit.feature.summary.di.SummaryComponentDependencies
+import ru.devkit.feature.summary.di.SummaryComponentDependenciesProvider
 import ru.devkit.investapplication.di.AppComponent
 import ru.devkit.investapplication.di.AppModule
 import ru.devkit.investapplication.di.DaggerAppComponent
@@ -14,7 +14,10 @@ import ru.devkit.investapplication.di.DaggerAppComponent
 /**
  * @author k.i.tayupov
  */
-class App : Application(), PortfolioComponentDependenciesProvider, StockHistoryComponent, SummaryComponent {
+class App : Application(),
+    PortfolioComponentDependenciesProvider,
+    StockHistoryComponent,
+    SummaryComponentDependenciesProvider {
 
     lateinit var appComponent: AppComponent
 
@@ -29,11 +32,11 @@ class App : Application(), PortfolioComponentDependenciesProvider, StockHistoryC
         appComponent.inject(fragment)
     }
 
-    override fun inject(fragment: SummaryFragment) {
-        appComponent.inject(fragment)
+    override fun portfolioComponentDependencies(): PortfolioComponentDependencies {
+        return appComponent
     }
 
-    override fun portfolioComponentDependencies(): PortfolioComponentDependencies {
+    override fun summaryComponentDependencies(): SummaryComponentDependencies {
         return appComponent
     }
 }
