@@ -1,5 +1,7 @@
 package ru.devkit.investapplication.di
 
+import android.content.Context
+import dagger.BindsInstance
 import dagger.Component
 import ru.devkit.domain.repository.PortfolioRepository
 import ru.devkit.domain.repository.di.RepositoryModule
@@ -15,7 +17,6 @@ import javax.inject.Singleton
  */
 @Component(
     modules = [
-        AppModule::class,
         ServiceModule::class,
         RepositoryModule::class,
     ]
@@ -28,4 +29,9 @@ interface AppComponent : PortfolioComponentDependencies,
     override fun portfolioRepository(): PortfolioRepository
 
     fun inject(activity: MainActivity)
+
+    @Component.Factory
+    interface Factory {
+        fun create(@BindsInstance context: Context): AppComponent
+    }
 }

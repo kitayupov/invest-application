@@ -8,7 +8,6 @@ import ru.devkit.feature.stock.history.di.StockHistoryComponentDependenciesProvi
 import ru.devkit.feature.summary.di.SummaryComponentDependencies
 import ru.devkit.feature.summary.di.SummaryComponentDependenciesProvider
 import ru.devkit.investapplication.di.AppComponent
-import ru.devkit.investapplication.di.AppModule
 import ru.devkit.investapplication.di.DaggerAppComponent
 
 /**
@@ -23,9 +22,7 @@ class App : Application(),
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerAppComponent.builder()
-            .appModule(AppModule(context = this))
-            .build()
+        appComponent = DaggerAppComponent.factory().create(this)
     }
 
     override fun portfolioComponentDependencies(): PortfolioComponentDependencies {
