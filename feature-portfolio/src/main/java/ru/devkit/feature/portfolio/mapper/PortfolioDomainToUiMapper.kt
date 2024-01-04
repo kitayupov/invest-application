@@ -4,7 +4,7 @@ import ru.devkit.domain.repository.data.Portfolio
 import ru.devkit.ui.model.DiffSign
 import ru.devkit.ui.model.LastSign
 import ru.devkit.ui.model.ListItemUiModel
-import ru.devkit.ui.model.PortfolioUiModel
+import ru.devkit.feature.portfolio.data.PortfolioUiModel
 import ru.devkit.utils.formatCurrencyPrice
 import ru.devkit.utils.formatPercentage
 import javax.inject.Inject
@@ -12,7 +12,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class PortfolioDomainToUiMapper @Inject constructor() {
+internal class PortfolioDomainToUiMapper @Inject constructor() {
 
     operator fun invoke(from: Portfolio): PortfolioUiModel {
         val items = from.investments.map {

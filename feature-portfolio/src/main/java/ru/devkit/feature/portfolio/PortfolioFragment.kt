@@ -17,13 +17,13 @@ import ru.devkit.feature.portfolio.databinding.FragmentPortfolioBinding
 import ru.devkit.feature.portfolio.di.DaggerPortfolioComponent
 import ru.devkit.feature.portfolio.di.PortfolioComponentDependenciesProvider
 import ru.devkit.ui.ListItemComponent
-import ru.devkit.ui.model.PortfolioUiModel
+import ru.devkit.feature.portfolio.data.PortfolioUiModel
 import javax.inject.Inject
 
 /**
  * @author k.i.tayupov
  */
-class PortfolioFragment : Fragment() {
+internal class PortfolioFragment : Fragment() {
 
     @Inject
     lateinit var viewModel: PortfolioViewModel

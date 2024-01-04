@@ -8,7 +8,7 @@ import ru.devkit.feature.portfolio.PortfolioFragment
  */
 @PortfolioScope
 @Component(dependencies = [PortfolioComponentDependencies::class])
-interface PortfolioComponent {
+internal interface PortfolioComponent {
 
     fun inject(fragment: PortfolioFragment)
 

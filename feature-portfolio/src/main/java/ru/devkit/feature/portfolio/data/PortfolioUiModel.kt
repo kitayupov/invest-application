@@ -1,9 +1,12 @@
-package ru.devkit.ui.model
+package ru.devkit.feature.portfolio.data
+
+import ru.devkit.ui.model.DiffSign
+import ru.devkit.ui.model.ListItemUiModel
 
 /**
  * @author k.i.tayupov
  */
-data class PortfolioUiModel(
+internal data class PortfolioUiModel(
     val items: List<ListItemUiModel>,
     val totalValue: String,
     val totalDiffValue: String,
