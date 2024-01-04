@@ -3,8 +3,8 @@ package ru.devkit.investapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import ru.devkit.investapplication.app.App
-import ru.devkit.service.data.SandboxPortfolioService
-import ru.devkit.service.mock.MockStocksService
+import ru.devkit.service.PortfolioServiceApi
+import ru.devkit.service.StocksServiceApi
 import javax.inject.Inject
 
 /**
@@ -13,9 +13,9 @@ import javax.inject.Inject
 class MainActivity : AppCompatActivity() {
 
     @Inject
-    lateinit var mockPortfolioService: SandboxPortfolioService
+    lateinit var mockPortfolioService: PortfolioServiceApi
     @Inject
-    lateinit var mockStocksService: MockStocksService
+    lateinit var mockStocksService: StocksServiceApi
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        mockPortfolioService.start()
-        mockStocksService.start()
+        mockPortfolioService.attach()
+        mockStocksService.attach()
     }
 
     override fun onStop() {

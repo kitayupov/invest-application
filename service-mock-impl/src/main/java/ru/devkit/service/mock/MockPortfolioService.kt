@@ -22,7 +22,7 @@ class MockPortfolioService @Inject constructor(
 
     private var isRunning = false
 
-    fun start() {
+    override fun attach() {
         isRunning = true
         data.set(
             PortfolioApi(
@@ -37,7 +37,7 @@ class MockPortfolioService @Inject constructor(
         )
     }
 
-    fun release() {
+    override fun release() {
         isRunning = false
     }
 

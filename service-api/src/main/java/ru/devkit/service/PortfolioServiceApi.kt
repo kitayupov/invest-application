@@ -9,4 +9,8 @@ import ru.devkit.service.data.PortfolioApi
 interface PortfolioServiceApi {
 
     fun getPortfolio(): Flow<PortfolioApi>
+
+    fun attach()
+
+    fun release()
 }

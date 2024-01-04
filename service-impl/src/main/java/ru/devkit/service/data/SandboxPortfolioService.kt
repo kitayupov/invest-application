@@ -40,11 +40,11 @@ class SandboxPortfolioService @Inject constructor() : PortfolioServiceApi {
         }
     }
 
-    fun start() {
+    override fun attach() {
         isStarted = true
     }
 
-    fun release() {
+    override fun release() {
         isStarted = false
     }
 }

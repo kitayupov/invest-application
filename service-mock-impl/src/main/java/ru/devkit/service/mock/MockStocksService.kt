@@ -21,7 +21,7 @@ class MockStocksService @Inject constructor(
 
     private var isRunning = false
 
-    fun start() {
+    override fun attach() {
         isRunning = true
         thread {
             while (isRunning) {
@@ -39,7 +39,7 @@ class MockStocksService @Inject constructor(
         }
     }
 
-    fun release() {
+    override fun release() {
         isRunning = false
     }
 

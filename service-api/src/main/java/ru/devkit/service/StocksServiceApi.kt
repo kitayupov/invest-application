@@ -10,4 +10,8 @@ interface StocksServiceApi {
     fun getStock(symbol: String): StockApi
 
     fun getStockHistory(symbol: String): List<Double>
+
+    fun attach()
+
+    fun release()
 }
