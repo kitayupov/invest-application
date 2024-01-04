@@ -29,7 +29,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class SummaryFragment : Fragment() {
+internal class SummaryFragment : Fragment() {
 
     @Inject
     lateinit var viewModel: SummaryViewModel

@@ -8,7 +8,7 @@ import ru.devkit.feature.summary.SummaryFragment
  */
 @SummaryScope
 @Component(dependencies = [SummaryComponentDependencies::class])
-interface SummaryComponent {
+internal interface SummaryComponent {
 
     fun inject(fragment: SummaryFragment)
 

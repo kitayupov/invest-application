@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class SummaryDomainToUiMapper @Inject constructor() {
+internal class SummaryDomainToUiMapper @Inject constructor() {
 
     operator fun invoke(from: Portfolio): SummaryUiModel {
         val items = from.investments.map {

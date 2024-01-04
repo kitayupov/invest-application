@@ -16,7 +16,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class SummaryViewModel @Inject constructor(
+internal class SummaryViewModel @Inject constructor(
     private val repository: PortfolioRepository,
     private val mapper: SummaryDomainToUiMapper,
 ) : ViewModel() {
