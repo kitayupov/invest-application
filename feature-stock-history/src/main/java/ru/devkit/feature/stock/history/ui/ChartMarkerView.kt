@@ -10,7 +10,7 @@ import com.github.mikephil.charting.utils.MPPointF
 import ru.devkit.feature.stock.history.R
 import ru.devkit.utils.formatPrice
 
-class ChartMarkerView(context: Context) : MarkerView(context, R.layout.layout_marker_view) {
+internal class ChartMarkerView(context: Context) : MarkerView(context, R.layout.layout_marker_view) {
 
     private val content: TextView = findViewById(R.id.marker_text)
 

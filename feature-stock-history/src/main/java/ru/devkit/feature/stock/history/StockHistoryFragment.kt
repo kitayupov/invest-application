@@ -26,7 +26,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class StockHistoryFragment : Fragment() {
+internal class StockHistoryFragment : Fragment() {
 
     @Inject
     lateinit var viewModel: StockHistoryViewModel

@@ -10,7 +10,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class InvestmentDomainToUiMapper @Inject constructor() {
+internal class InvestmentDomainToUiMapper @Inject constructor() {
 
     operator fun invoke(from: Investment): InvestmentUiModel {
         return InvestmentUiModel(

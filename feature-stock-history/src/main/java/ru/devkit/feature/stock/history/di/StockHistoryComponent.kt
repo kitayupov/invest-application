@@ -8,7 +8,7 @@ import ru.devkit.feature.stock.history.StockHistoryFragment
  */
 @StockHistoryScope
 @Component(dependencies = [StockHistoryComponentDependencies::class])
-interface StockHistoryComponent {
+internal interface StockHistoryComponent {
 
     fun inject(fragment: StockHistoryFragment)
 

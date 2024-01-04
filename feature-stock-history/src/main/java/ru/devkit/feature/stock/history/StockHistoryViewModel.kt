@@ -16,7 +16,7 @@ import javax.inject.Inject
 /**
  * @author k.i.tayupov
  */
-class StockHistoryViewModel @Inject constructor(
+internal class StockHistoryViewModel @Inject constructor(
     private val repository: PortfolioRepository,
     private val mapper: InvestmentDomainToUiMapper,
 ) : ViewModel() {

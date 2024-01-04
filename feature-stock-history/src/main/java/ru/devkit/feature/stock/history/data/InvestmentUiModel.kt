@@ -5,7 +5,7 @@ import ru.devkit.ui.model.DiffSign
 /**
  * @author k.i.tayupov
  */
-data class InvestmentUiModel(
+internal data class InvestmentUiModel(
     val name: String,
     val value: String,
     val diffValue: String,
