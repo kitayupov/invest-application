@@ -1,0 +1,140 @@
+[
+  {
+    "symbol": "BBG000LD9JQ8",
+    "name": "Wynn Resorts",
+    "quantity": 15,
+    "price": 90.0
+  },
+  {
+    "symbol": "BBG000BBPFB9",
+    "name": "Applied Materials",
+    "quantity": 10,
+    "price": 138.0
+  },
+  {
+    "symbol": "BBG000CGC1X8",
+    "name": "Qualcomm",
+    "quantity": 10,
+    "price": 115.0
+  },
+  {
+    "symbol": "BBG005YHY0Q7",
+    "name": "JD.com",
+    "quantity": 50,
+    "price": 25.0
+  },
+  {
+    "symbol": "BBG000BBJQV0",
+    "name": "NVIDIA",
+    "quantity": 3,
+    "price": 432.0
+  },
+  {
+    "symbol": "BBG000CKGBP2",
+    "name": "GILEAD",
+    "quantity": 15,
+    "price": 81.0
+  },
+  {
+    "symbol": "BBG000BT0093",
+    "name": "Sirius XM Holdings Inc",
+    "quantity": 250,
+    "price": 4.0
+  },
+  {
+    "symbol": "BBG000BFT2L4",
+    "name": "Comcast",
+    "quantity": 25,
+    "price": 42.0
+  },
+  {
+    "symbol": "BBG000C3J3C9",
+    "name": "Cisco",
+    "quantity": 25,
+    "price": 52.0
+  },
+  {
+    "symbol": "BBG000C0G1D1",
+    "name": "Intel Corporation",
+    "quantity": 35,
+    "price": 37.0
+  },
+  {
+    "symbol": "BBG000BPH459",
+    "name": "Microsoft Corporation",
+    "quantity": 3,
+    "price": 349.0
+  },
+  {
+    "symbol": "BBG000DWG505",
+    "name": "Berkshire Hathaway",
+    "quantity": 3,
+    "price": 348.0
+  },
+  {
+    "symbol": "BBG009S39JX6",
+    "name": "Alphabet Class A",
+    "quantity": 10,
+    "price": 127.0
+  },
+  {
+    "symbol": "BBG000GZQ728",
+    "name": "Exxon Mobil Corporation",
+    "quantity": 13,
+    "price": 108.0
+  },
+  {
+    "symbol": "BBG000C5Z1S3",
+    "name": "Micron Technology",
+    "quantity": 15,
+    "price": 70.0
+  },
+  {
+    "symbol": "BBG000B9XRY4",
+    "name": "Apple",
+    "quantity": 8,
+    "price": 172.0
+  },
+  {
+    "symbol": "BBG000C0G1D1",
+    "name": "Intel Corporation",
+    "quantity": 35,
+    "price": 37.0
+  },
+  {
+    "symbol": "BBG000BPH459",
+    "name": "Microsoft Corporation",
+    "quantity": 3,
+    "price": 349.0
+  },
+  {
+    "symbol": "BBG000DWG505",
+    "name": "Berkshire Hathaway",
+    "quantity": 3,
+    "price": 348.0
+  },
+  {
+    "symbol": "BBG009S39JX6",
+    "name": "Alphabet Class A",
+    "quantity": 10,
+    "price": 127.0
+  },
+  {
+    "symbol": "BBG000GZQ728",
+    "name": "Exxon Mobil Corporation",
+    "quantity": 13,
+    "price": 108.0
+  },
+  {
+    "symbol": "BBG000C5Z1S3",
+    "name": "Micron Technology",
+    "quantity": 15,
+    "price": 70.0
+  },
+  {
+    "symbol": "BBG000B9XRY4",
+    "name": "Apple",
+    "quantity": 8,
+    "price": 172.0
+  }
+]

@@ -21,7 +21,7 @@ class MockCommonService @Inject constructor(
 
     private fun getDto(): List<MockData> {
         try {
-            val inputStream = context.resources.openRawResource(R.raw.stocks)
+            val inputStream = context.resources.openRawResource(R.raw.sandbox)
             val inputStreamReader = InputStreamReader(inputStream)
             val bufferedReader = BufferedReader(inputStreamReader)
             val stringBuilder = StringBuilder()
