@@ -14,7 +14,8 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.coroutines.launch
 import ru.devkit.feature.portfolio.adapter.PortfolioAdapter
 import ru.devkit.feature.portfolio.databinding.FragmentPortfolioBinding
-import ru.devkit.feature.portfolio.di.PortfolioComponent
+import ru.devkit.feature.portfolio.di.DaggerPortfolioComponent
+import ru.devkit.feature.portfolio.di.PortfolioComponentDependenciesProvider
 import ru.devkit.ui.ListItemComponent
 import ru.devkit.ui.model.PortfolioUiModel
 import javax.inject.Inject
@@ -32,7 +33,9 @@ class PortfolioFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        (activity?.application as PortfolioComponent).inject(this)
+        val dependencies = (context.applicationContext as PortfolioComponentDependenciesProvider)
+            .portfolioComponentDependencies()
+        DaggerPortfolioComponent.factory().create(dependencies).inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
