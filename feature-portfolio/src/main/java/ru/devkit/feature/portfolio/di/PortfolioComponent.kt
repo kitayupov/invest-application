@@ -6,6 +6,7 @@ import ru.devkit.feature.portfolio.PortfolioFragment
 /**
  * @author k.i.tayupov
  */
+@PortfolioScope
 @Component(dependencies = [PortfolioComponentDependencies::class])
 interface PortfolioComponent {
 

@@ -6,6 +6,7 @@ import ru.devkit.feature.stock.history.StockHistoryFragment
 /**
  * @author k.i.tayupov
  */
+@StockHistoryScope
 @Component(dependencies = [StockHistoryComponentDependencies::class])
 interface StockHistoryComponent {
 

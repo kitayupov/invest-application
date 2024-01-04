@@ -6,6 +6,7 @@ import ru.devkit.feature.summary.SummaryFragment
 /**
  * @author k.i.tayupov
  */
+@SummaryScope
 @Component(dependencies = [SummaryComponentDependencies::class])
 interface SummaryComponent {
 
