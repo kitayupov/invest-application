@@ -11,6 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
+import kotlinx.coroutines.flow.dropWhile
 import kotlinx.coroutines.launch
 import ru.devkit.common.di.ComponentDependenciesProvider
 import ru.devkit.feature.portfolio.adapter.PortfolioAdapter
@@ -73,7 +74,9 @@ internal class PortfolioFragment : Fragment() {
 
     private fun setupDataUpdate() {
         lifecycleScope.launch {
-            viewModel.model.collect(::updateData)
+            viewModel.model
+                .dropWhile { it == PortfolioUiModel.EMPTY }
+                .collect(::updateData)
         }
     }
 

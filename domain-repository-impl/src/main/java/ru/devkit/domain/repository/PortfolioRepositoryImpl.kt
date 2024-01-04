@@ -3,6 +3,7 @@ package ru.devkit.domain.repository
 import android.content.Context
 import androidx.room.Room
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.dropWhile
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.onStart
 import ru.devkit.domain.repository.data.Investment
@@ -28,6 +29,7 @@ class PortfolioRepositoryImpl @Inject constructor(
 
     override fun getPortfolio(): Flow<Portfolio> {
         return portfolioService.getPortfolio()
+            .dropWhile { it.items.isEmpty() }
             .map { data ->
                 val dbModels = data.items.map { apiToDbMapper(it, stocksService.getStock(it.symbol)) }
                 db.portfolioDao().deleteAndInsert(dbModels)
