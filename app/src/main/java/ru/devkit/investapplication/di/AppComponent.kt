@@ -6,6 +6,7 @@ import ru.devkit.domain.repository.di.RepositoryModule
 import ru.devkit.feature.portfolio.PortfolioFragment
 import ru.devkit.feature.portfolio.di.PortfolioComponentDependencies
 import ru.devkit.feature.stock.history.StockHistoryFragment
+import ru.devkit.feature.stock.history.di.StockHistoryComponentDependencies
 import ru.devkit.feature.summary.SummaryFragment
 import ru.devkit.feature.summary.di.SummaryComponentDependencies
 import ru.devkit.investapplication.MainActivity
@@ -23,7 +24,9 @@ import javax.inject.Singleton
     ]
 )
 @Singleton
-interface AppComponent : PortfolioComponentDependencies, SummaryComponentDependencies {
+interface AppComponent : PortfolioComponentDependencies,
+    StockHistoryComponentDependencies,
+    SummaryComponentDependencies {
 
     override fun portfolioRepository(): PortfolioRepository
 

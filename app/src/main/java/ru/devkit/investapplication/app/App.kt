@@ -3,8 +3,8 @@ package ru.devkit.investapplication.app
 import android.app.Application
 import ru.devkit.feature.portfolio.di.PortfolioComponentDependencies
 import ru.devkit.feature.portfolio.di.PortfolioComponentDependenciesProvider
-import ru.devkit.feature.stock.history.StockHistoryFragment
-import ru.devkit.feature.stock.history.di.StockHistoryComponent
+import ru.devkit.feature.stock.history.di.StockHistoryComponentDependencies
+import ru.devkit.feature.stock.history.di.StockHistoryComponentDependenciesProvider
 import ru.devkit.feature.summary.di.SummaryComponentDependencies
 import ru.devkit.feature.summary.di.SummaryComponentDependenciesProvider
 import ru.devkit.investapplication.di.AppComponent
@@ -16,7 +16,7 @@ import ru.devkit.investapplication.di.DaggerAppComponent
  */
 class App : Application(),
     PortfolioComponentDependenciesProvider,
-    StockHistoryComponent,
+    StockHistoryComponentDependenciesProvider,
     SummaryComponentDependenciesProvider {
 
     lateinit var appComponent: AppComponent
@@ -28,15 +28,15 @@ class App : Application(),
             .build()
     }
 
-    override fun inject(fragment: StockHistoryFragment) {
-        appComponent.inject(fragment)
-    }
-
     override fun portfolioComponentDependencies(): PortfolioComponentDependencies {
         return appComponent
     }
 
     override fun summaryComponentDependencies(): SummaryComponentDependencies {
+        return appComponent
+    }
+
+    override fun stockHistoryComponentDependencies(): StockHistoryComponentDependencies {
         return appComponent
     }
 }
