@@ -39,6 +39,7 @@ android {
 
 dependencies {
     implementation(project(":domain-repository-api"))
+    implementation(project(":common-di"))
     implementation(project(":common-ui"))
     implementation(project(":common-ui-utils"))
     implementation(project(":common-utils"))

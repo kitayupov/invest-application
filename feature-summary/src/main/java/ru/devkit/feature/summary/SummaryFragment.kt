@@ -18,11 +18,12 @@ import com.github.mikephil.charting.interfaces.datasets.IPieDataSet
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.utils.ColorTemplate
 import kotlinx.coroutines.launch
+import ru.devkit.common.di.ComponentDependenciesProvider
 import ru.devkit.feature.summary.data.SummaryItemUiModel
 import ru.devkit.feature.summary.data.SummaryUiModel
 import ru.devkit.feature.summary.databinding.FragmentSummaryBinding
 import ru.devkit.feature.summary.di.DaggerSummaryComponent
-import ru.devkit.feature.summary.di.SummaryComponentDependenciesProvider
+import ru.devkit.feature.summary.di.SummaryComponentDependencies
 import ru.devkit.ui.utils.getColorResCompat
 import javax.inject.Inject
 
@@ -40,9 +41,11 @@ internal class SummaryFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val dependencies = (context.applicationContext as SummaryComponentDependenciesProvider)
-            .summaryComponentDependencies()
-        DaggerSummaryComponent.factory().create(dependencies).inject(this)
+        val dependencies = (context.applicationContext as ComponentDependenciesProvider)
+            .componentDependencies()
+        DaggerSummaryComponent.factory()
+            .create(dependencies as SummaryComponentDependencies)
+            .inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

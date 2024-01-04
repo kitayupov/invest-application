@@ -19,6 +19,8 @@ rootProject.name = "invest-application"
 
 include(":app")
 
+include(":common-di")
+
 include(":common-ui")
 include(":common-ui-models")
 include(":common-ui-utils")

@@ -55,6 +55,8 @@ dependencies {
     // Domain
     implementation(project(":domain-repository-impl"))
     implementation(project(":service-impl"))
+    // DI
+    implementation(project(":common-di"))
     // Mock
     implementation(project(":service-mock-impl"))
 }

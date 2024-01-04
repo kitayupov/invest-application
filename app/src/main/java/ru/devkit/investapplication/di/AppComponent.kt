@@ -3,6 +3,7 @@ package ru.devkit.investapplication.di
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
+import ru.devkit.common.di.ComponentDependencies
 import ru.devkit.domain.repository.PortfolioRepository
 import ru.devkit.domain.repository.di.RepositoryModule
 import ru.devkit.feature.portfolio.di.PortfolioComponentDependencies
@@ -22,7 +23,8 @@ import javax.inject.Singleton
     ]
 )
 @Singleton
-interface AppComponent : PortfolioComponentDependencies,
+interface AppComponent : ComponentDependencies,
+    PortfolioComponentDependencies,
     StockHistoryComponentDependencies,
     SummaryComponentDependencies {
 

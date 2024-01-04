@@ -12,12 +12,13 @@ import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.coroutines.launch
+import ru.devkit.common.di.ComponentDependenciesProvider
 import ru.devkit.feature.portfolio.adapter.PortfolioAdapter
 import ru.devkit.feature.portfolio.databinding.FragmentPortfolioBinding
 import ru.devkit.feature.portfolio.di.DaggerPortfolioComponent
-import ru.devkit.feature.portfolio.di.PortfolioComponentDependenciesProvider
 import ru.devkit.ui.ListItemComponent
 import ru.devkit.feature.portfolio.data.PortfolioUiModel
+import ru.devkit.feature.portfolio.di.PortfolioComponentDependencies
 import javax.inject.Inject
 
 /**
@@ -33,9 +34,11 @@ internal class PortfolioFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val dependencies = (context.applicationContext as PortfolioComponentDependenciesProvider)
-            .portfolioComponentDependencies()
-        DaggerPortfolioComponent.factory().create(dependencies).inject(this)
+        val dependencies = (context.applicationContext as ComponentDependenciesProvider)
+            .componentDependencies()
+        DaggerPortfolioComponent.factory()
+            .create(dependencies as PortfolioComponentDependencies)
+            .inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {

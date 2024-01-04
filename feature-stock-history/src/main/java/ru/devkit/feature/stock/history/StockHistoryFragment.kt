@@ -14,10 +14,11 @@ import com.github.mikephil.charting.data.LineDataSet
 import com.google.android.material.R
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import ru.devkit.common.di.ComponentDependenciesProvider
 import ru.devkit.feature.stock.history.data.InvestmentUiModel
 import ru.devkit.feature.stock.history.databinding.FragmentStockHistoryBinding
 import ru.devkit.feature.stock.history.di.DaggerStockHistoryComponent
-import ru.devkit.feature.stock.history.di.StockHistoryComponentDependenciesProvider
+import ru.devkit.feature.stock.history.di.StockHistoryComponentDependencies
 import ru.devkit.feature.stock.history.ui.ChartMarkerView
 import ru.devkit.ui.ListItemComponent
 import ru.devkit.ui.utils.getColorResCompat
@@ -35,9 +36,11 @@ internal class StockHistoryFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        val dependencies = (context.applicationContext as StockHistoryComponentDependenciesProvider)
-            .stockHistoryComponentDependencies()
-        DaggerStockHistoryComponent.factory().create(dependencies).inject(this)
+        val dependencies = (context.applicationContext as ComponentDependenciesProvider)
+            .componentDependencies()
+        DaggerStockHistoryComponent.factory()
+            .create(dependencies as StockHistoryComponentDependencies)
+            .inject(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
