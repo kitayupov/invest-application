@@ -3,6 +3,7 @@ package ru.devkit.feature.splash.screen
 import android.content.Context
 import android.os.Bundle
 import android.os.Handler
+import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -24,12 +25,19 @@ class SplashScreenFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        setupNavigation()
+    }
+
+    private fun setupNavigation() {
         Handler().postDelayed({
             val request = NavDeepLinkRequest.Builder
                 .fromUri("android-app://ru.devkit.invest.application/portfolio_fragment".toUri())
                 .build()
             findNavController().navigate(request)
         }, 2000)
+
+        val inflater = TransitionInflater.from(requireContext())
+        exitTransition = inflater.inflateTransition(ru.devkit.ui.R.transition.fade)
     }
 
     override fun onAttach(context: Context) {

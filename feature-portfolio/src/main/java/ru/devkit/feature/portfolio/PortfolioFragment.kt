@@ -2,6 +2,7 @@ package ru.devkit.feature.portfolio
 
 import android.content.Context
 import android.os.Bundle
+import android.transition.TransitionInflater
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -51,12 +52,11 @@ internal class PortfolioFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupNavigation()
-    }
-
-    override fun onResume() {
-        super.onResume()
-        viewModel.attach()
         setupDataUpdate()
+        viewModel.attach()
+
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(ru.devkit.ui.R.transition.fade)
     }
 
     override fun onPause() {
