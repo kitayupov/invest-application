@@ -33,6 +33,7 @@ include(":service-mock-impl")
 include(":domain-repository-api")
 include(":domain-repository-impl")
 
+include(":feature-splash-screen")
 include(":feature-portfolio")
 include(":feature-stock-history")
 include(":feature-summary")
