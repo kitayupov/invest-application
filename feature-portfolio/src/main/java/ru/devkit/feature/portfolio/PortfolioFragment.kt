@@ -52,11 +52,10 @@ internal class PortfolioFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupNavigation()
+        setupTransition()
         setupDataUpdate()
         viewModel.attach()
 
-        val inflater = TransitionInflater.from(requireContext())
-        enterTransition = inflater.inflateTransition(ru.devkit.ui.R.transition.fade)
     }
 
     override fun onPause() {
@@ -101,5 +100,10 @@ internal class PortfolioFragment : Fragment() {
                 navigate(R.id.action_portfolioFragment_to_summaryFragment)
             }
         }
+    }
+
+    private fun setupTransition() {
+        val inflater = TransitionInflater.from(requireContext())
+        enterTransition = inflater.inflateTransition(ru.devkit.ui.R.transition.fade)
     }
 }

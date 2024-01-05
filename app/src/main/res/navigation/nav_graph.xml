@@ -24,11 +24,15 @@
 
         <action
             android:id="@id/action_portfolioFragment_to_stockHistoryFragment"
-            app:destination="@id/stockHistoryFragment" />
+            app:destination="@id/stockHistoryFragment"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
         <action
             android:id="@id/action_portfolioFragment_to_summaryFragment"
-            app:destination="@id/summaryFragment" />
+            app:destination="@id/summaryFragment"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
 
     </fragment>
 
