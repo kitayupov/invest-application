@@ -2,7 +2,18 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/portfolioFragment">
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="ru.devkit.feature.splash.screen.SplashScreenFragment"
+        android:label="SplashScreenFragment" >
+
+        <action
+            android:id="@+id/action_splashScreenFragment_to_portfolioFragment"
+            app:destination="@id/portfolioFragment" />
+
+    </fragment>
 
     <fragment
         android:id="@+id/portfolioFragment"
@@ -16,6 +27,8 @@
         <action
             android:id="@+id/action_portfolioFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
+
+        <deepLink app:uri="android-app://ru.devkit.invest.application/portfolio_fragment" />
 
     </fragment>
 

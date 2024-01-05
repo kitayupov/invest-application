@@ -5,6 +5,10 @@
     android:layout_height="match_parent"
     tools:context=".SplashScreenFragment">
 
-
+    <ImageView
+        android:layout_width="@dimen/splash_screen_icon_size"
+        android:layout_height="@dimen/splash_screen_icon_size"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_pie_chart" />
 
 </FrameLayout>

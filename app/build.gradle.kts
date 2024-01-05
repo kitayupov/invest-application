@@ -51,6 +51,7 @@ dependencies {
     // DI
     implementation(project(":common-di"))
     // Feature
+    implementation(project(":feature-splash-screen"))
     implementation(project(":feature-portfolio"))
     implementation(project(":feature-stock-history"))
     implementation(project(":feature-summary"))

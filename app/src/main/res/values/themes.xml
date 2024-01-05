@@ -5,6 +5,8 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.InvestApplication" parent="Base.Theme.InvestApplication" />
+    <style name="Theme.InvestApplication" parent="Base.Theme.InvestApplication">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 
 </resources>
