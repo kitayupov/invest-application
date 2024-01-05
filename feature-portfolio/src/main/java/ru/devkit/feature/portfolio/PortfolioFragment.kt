@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.coroutines.flow.dropWhile
 import kotlinx.coroutines.launch
 import ru.devkit.common.di.ComponentDependenciesProvider
-import ru.devkit.common.navigation.R
+import ru.devkit.common.navigation.R as navigationR
 import ru.devkit.feature.portfolio.adapter.PortfolioAdapter
 import ru.devkit.feature.portfolio.databinding.FragmentPortfolioBinding
 import ru.devkit.feature.portfolio.di.DaggerPortfolioComponent
@@ -94,16 +94,16 @@ internal class PortfolioFragment : Fragment() {
     private fun setupNavigation() {
         with(findNavController()) {
             portfolioAdapter.onClickAction = { symbol ->
-                navigate(R.id.action_portfolioFragment_to_stockHistoryFragment, bundleOf("symbol" to symbol))
+                navigate(navigationR.id.action_portfolioFragment_to_stockHistoryFragment, bundleOf("symbol" to symbol))
             }
             binding.summaryButton.setOnClickListener {
-                navigate(R.id.action_portfolioFragment_to_summaryFragment)
+                navigate(navigationR.id.action_portfolioFragment_to_summaryFragment)
             }
         }
     }
 
     private fun setupTransition() {
         val inflater = TransitionInflater.from(requireContext())
-        enterTransition = inflater.inflateTransition(ru.devkit.ui.R.transition.fade)
+        enterTransition = inflater.inflateTransition(navigationR.transition.fade)
     }
 }
