@@ -13,6 +13,7 @@ import ru.devkit.domain.repository.mapper.InvestmentApiToDbMapper
 import ru.devkit.domain.repository.mapper.InvestmentDbToDomainMapper
 import ru.devkit.service.PortfolioServiceApi
 import ru.devkit.service.StocksServiceApi
+import ru.devkit.service.data.PortfolioApi
 import javax.inject.Inject
 import javax.inject.Singleton
 
@@ -29,13 +30,13 @@ class PortfolioRepositoryImpl @Inject constructor(
 
     override fun getPortfolio(): Flow<Portfolio> {
         return portfolioService.getPortfolio()
-            .dropWhile { it.items.isEmpty() }
+            .dropWhile { it == PortfolioApi.EMPTY }
             .map { data ->
                 val dbModels = data.items.map { apiToDbMapper(it, stocksService.getStock(it.symbol)) }
                 db.portfolioDao().deleteAndInsert(dbModels)
                 dbModels
             }
-            .onStart { db.portfolioDao().getAll() }
+            .onStart { emit(db.portfolioDao().getAll()) }
             .map { data ->
                 val domainModels = data.map { dbToDomainMapper(it) }
                 Portfolio(domainModels)

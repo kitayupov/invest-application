@@ -1,8 +1,8 @@
 package ru.devkit.service.data
 
 import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.cancellable
@@ -19,15 +19,17 @@ import javax.inject.Singleton
  * @author k.i.tayupov
  */
 @Singleton
-class SandboxPortfolioService @Inject constructor() : PortfolioServiceApi, CoroutineScope by MainScope() {
+class SandboxPortfolioService @Inject constructor() : PortfolioServiceApi {
 
     private val api = NetworkService.create(SandboxPortfolioService::class.java)
 
-    private var portfolio = PortfolioApi(emptyList())
+    private var portfolio = PortfolioApi.EMPTY
 
+    private val ioScope = CoroutineScope(Dispatchers.IO)
     private var job: Job = Job()
 
     override fun getPortfolio(): Flow<PortfolioApi> {
+        // Workaround for infinite data update
         job.cancel()
         val flow = flow {
             while (true) {
@@ -35,12 +37,12 @@ class SandboxPortfolioService @Inject constructor() : PortfolioServiceApi, Corou
                 delay(1_000)
             }
         }
-        job = launch { flow.cancellable() }
+        job = ioScope.launch { flow.cancellable() }
         return flow
     }
 
     override fun attach() {
-        launch {
+        ioScope.launch {
             val accountId = api.getAccounts().accounts[0].id
             val orders = api.getSandboxOrders(AccountRequest(accountId))
 

@@ -5,4 +5,9 @@ package ru.devkit.service.data
  */
 data class PortfolioApi(
     val items: List<InvestmentApi>,
-)
+) {
+
+    companion object {
+        val EMPTY = PortfolioApi(emptyList())
+    }
+}
