@@ -9,10 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
-import androidx.core.net.toUri
-import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import ru.devkit.feature.splash.screen.databinding.FragmentSplashScreenBinding
+import ru.devkit.ui.R
 
 /**
  * @author k.i.tayupov
@@ -26,18 +25,18 @@ class SplashScreenFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         setupNavigation()
+        setupTransition()
     }
 
     private fun setupNavigation() {
         Handler().postDelayed({
-            val request = NavDeepLinkRequest.Builder
-                .fromUri("android-app://ru.devkit.invest.application/portfolio_fragment".toUri())
-                .build()
-            findNavController().navigate(request)
+            findNavController().navigate(ru.devkit.common.navigation.R.id.action_splashScreenFragment_to_portfolioFragment)
         }, 2000)
+    }
 
+    private fun setupTransition() {
         val inflater = TransitionInflater.from(requireContext())
-        exitTransition = inflater.inflateTransition(ru.devkit.ui.R.transition.fade)
+        exitTransition = inflater.inflateTransition(R.transition.fade)
     }
 
     override fun onAttach(context: Context) {

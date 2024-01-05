@@ -7,14 +7,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.net.toUri
+import androidx.core.os.bundleOf
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import kotlinx.coroutines.flow.dropWhile
 import kotlinx.coroutines.launch
 import ru.devkit.common.di.ComponentDependenciesProvider
+import ru.devkit.common.navigation.R
 import ru.devkit.feature.portfolio.adapter.PortfolioAdapter
 import ru.devkit.feature.portfolio.databinding.FragmentPortfolioBinding
 import ru.devkit.feature.portfolio.di.DaggerPortfolioComponent
@@ -93,17 +93,13 @@ internal class PortfolioFragment : Fragment() {
     }
 
     private fun setupNavigation() {
-        binding.summaryButton.setOnClickListener {
-            val request = NavDeepLinkRequest.Builder
-                .fromUri("android-app://ru.devkit.invest.application/summary_fragment".toUri())
-                .build()
-            findNavController().navigate(request)
-        }
-        portfolioAdapter.onClickAction = { symbol ->
-            val request = NavDeepLinkRequest.Builder
-                .fromUri("android-app://ru.devkit.invest.application/stock_history_fragment/${symbol}".toUri())
-                .build()
-            findNavController().navigate(request)
+        with(findNavController()) {
+            portfolioAdapter.onClickAction = { symbol ->
+                navigate(R.id.action_portfolioFragment_to_stockHistoryFragment, bundleOf("symbol" to symbol))
+            }
+            binding.summaryButton.setOnClickListener {
+                navigate(R.id.action_portfolioFragment_to_summaryFragment)
+            }
         }
     }
 }

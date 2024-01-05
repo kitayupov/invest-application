@@ -21,6 +21,8 @@ include(":app")
 
 include(":common-di")
 
+include(":common-navigation")
+
 include(":common-ui")
 include(":common-ui-models")
 include(":common-ui-utils")

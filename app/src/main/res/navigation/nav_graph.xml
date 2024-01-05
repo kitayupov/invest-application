@@ -7,51 +7,45 @@
     <fragment
         android:id="@+id/splashScreenFragment"
         android:name="ru.devkit.feature.splash.screen.SplashScreenFragment"
-        android:label="SplashScreenFragment" >
+        android:label="SplashScreenFragment">
 
         <action
             android:id="@+id/action_splashScreenFragment_to_portfolioFragment"
-            app:destination="@id/portfolioFragment" />
+            app:destination="@id/portfolioFragment"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true" />
 
     </fragment>
 
     <fragment
         android:id="@+id/portfolioFragment"
         android:name="ru.devkit.feature.portfolio.PortfolioFragment"
-        android:label="PortfolioFragment" >
+        android:label="PortfolioFragment">
 
         <action
-            android:id="@+id/action_portfolioFragment_to_stockHistoryFragment"
+            android:id="@id/action_portfolioFragment_to_stockHistoryFragment"
             app:destination="@id/stockHistoryFragment" />
 
         <action
-            android:id="@+id/action_portfolioFragment_to_summaryFragment"
+            android:id="@id/action_portfolioFragment_to_summaryFragment"
             app:destination="@id/summaryFragment" />
-
-        <deepLink app:uri="android-app://ru.devkit.invest.application/portfolio_fragment" />
 
     </fragment>
 
     <fragment
         android:id="@+id/stockHistoryFragment"
         android:name="ru.devkit.feature.stock.history.StockHistoryFragment"
-        android:label="StockHistoryFragment" >
+        android:label="StockHistoryFragment">
 
         <argument
             android:name="symbol"
             app:argType="string" />
-
-        <deepLink app:uri="android-app://ru.devkit.invest.application/stock_history_fragment/{symbol}" />
 
     </fragment>
 
     <fragment
         android:id="@+id/summaryFragment"
         android:name="ru.devkit.feature.summary.SummaryFragment"
-        android:label="SummaryFragment">
-
-        <deepLink app:uri="android-app://ru.devkit.invest.application/summary_fragment" />
-
-    </fragment>
+        android:label="SummaryFragment" />
 
 </navigation>

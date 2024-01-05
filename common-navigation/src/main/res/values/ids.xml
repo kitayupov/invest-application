@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_splashScreenFragment_to_portfolioFragment" type="id" />
+    <item name="action_portfolioFragment_to_stockHistoryFragment" type="id" />
+    <item name="action_portfolioFragment_to_summaryFragment" type="id" />
+</resources>
