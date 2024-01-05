@@ -6,4 +6,5 @@
     </style>
 
     <style name="Theme.InvestApplication" parent="Base.Theme.InvestApplication" />
+
 </resources>

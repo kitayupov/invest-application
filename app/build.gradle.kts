@@ -42,12 +42,14 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    // Dagger
-    implementation("com.google.dagger:dagger:2.46.1")
-    kapt("com.google.dagger:dagger-compiler:2.46.1")
     // Navigation
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    // Dagger
+    implementation("com.google.dagger:dagger:2.46.1")
+    kapt("com.google.dagger:dagger-compiler:2.46.1")
+    // DI
+    implementation(project(":common-di"))
     // Feature
     implementation(project(":feature-portfolio"))
     implementation(project(":feature-stock-history"))
@@ -55,8 +57,6 @@ dependencies {
     // Domain
     implementation(project(":domain-repository-impl"))
     implementation(project(":service-impl"))
-    // DI
-    implementation(project(":common-di"))
     // Mock
     implementation(project(":service-mock-impl"))
 }
