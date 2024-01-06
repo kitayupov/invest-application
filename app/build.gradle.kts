@@ -50,10 +50,12 @@ dependencies {
     androidTestImplementation("androidx.navigation:navigation-testing:$navVersion")
     androidTestImplementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
     androidTestImplementation("androidx.navigation:navigation-runtime-ktx:$navVersion")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.3")
     androidTestImplementation("androidx.test.ext:junit-ktx:1.1.5")
     androidTestImplementation("androidx.test:runner:1.5.2")
     androidTestImplementation(kotlin("test"))
     debugImplementation("androidx.fragment:fragment-testing:1.6.2")
+    androidTestImplementation("io.mockk:mockk-android:1.13.3")
     // Dagger
     implementation("com.google.dagger:dagger:2.46.1")
     kapt("com.google.dagger:dagger-compiler:2.46.1")

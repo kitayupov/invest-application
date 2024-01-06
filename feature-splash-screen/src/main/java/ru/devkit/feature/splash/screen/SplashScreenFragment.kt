@@ -25,7 +25,7 @@ private const val ANIMATION_DELAY = 500L
 private const val ANIMATION_DURATION = 2_000L
 private const val TRANSITION_DELAY = 1_000L
 
-class SplashScreenFragment : Fragment() {
+internal class SplashScreenFragment : Fragment() {
 
     private lateinit var binding: FragmentSplashScreenBinding
 
