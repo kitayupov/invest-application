@@ -43,8 +43,17 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     // Navigation
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    val navVersion = "2.7.6"
+    implementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
+    // Test
+    androidTestImplementation("androidx.navigation:navigation-testing:$navVersion")
+    androidTestImplementation("androidx.navigation:navigation-fragment-ktx:$navVersion")
+    androidTestImplementation("androidx.navigation:navigation-runtime-ktx:$navVersion")
+    androidTestImplementation("androidx.test.ext:junit-ktx:1.1.5")
+    androidTestImplementation("androidx.test:runner:1.5.2")
+    androidTestImplementation(kotlin("test"))
+    debugImplementation("androidx.fragment:fragment-testing:1.6.2")
     // Dagger
     implementation("com.google.dagger:dagger:2.46.1")
     kapt("com.google.dagger:dagger-compiler:2.46.1")
